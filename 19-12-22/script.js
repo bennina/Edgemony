@@ -8,16 +8,16 @@ let secondNumber = prompt("Inserisci il secondo operatore");
 //dichiaro la variabile in cui stampare i risultati.
 var result = '';
 
-if (userOperator === '*' || userOperator === 'moltiplicazione') {
+if (userOperator === '*' || userOperator === 'moltiplicazione' || userOperator === 'Moltiplicazione') {
     //Stampo la moltiplicazione
     result = "moltiplicazione:" + firstNumber +"*"+ secondNumber +' = ' + (firstNumber * secondNumber);
-} else if (userOperator === '-' || userOperator === 'sottrazione') {
+} else if (userOperator === '-' || userOperator === 'sottrazione' || userOperator === 'Sottrazione') {
     //Stampo la sottrazione
     result = "sottrazione: " + firstNumber +" - "+ secondNumber +' = ' + (firstNumber - secondNumber);
-} else if (userOperator === '+' || userOperator === 'addizione') { 
+} else if (userOperator === '+' || userOperator === 'addizione'  || userOperator === 'Addizione') { 
     //Stampo la addizione
     result = "addizione: " + firstNumber +" + "+ secondNumber +' = ' + (firstNumber + secondNumber);
-} else if (userOperator === '/' || userOperator === ':' || userOperator === 'divisione') { 
+} else if (userOperator === '/' || userOperator === ':' || userOperator === 'divisione' || userOperator === 'Divisione') { 
     //Stampo la divisione
     result = "divisione: " + firstNumber +" : "+ secondNumber +' = ' + (firstNumber / secondNumber);
 } else {
