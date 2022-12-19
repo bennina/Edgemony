@@ -5,21 +5,28 @@ let firstNumber = prompt("Inserisci il primo operatore");
 // Chiedo all'utente il di inserire il secondo numero
 let secondNumber = prompt("Inserisci il secondo operatore");
 
+//dichiaro la variabile in cui stampare i risultati.
 var result = '';
 
 if (userOperator === '*' || userOperator === 'moltiplicazione') {
-    result = "moltiplicazione: " + (firstNumber * secondNumber);
+    //Stampo la moltiplicazione
+    result = "moltiplicazione:" + firstNumber +"*"+ secondNumber +' = ' + (firstNumber * secondNumber);
 } else if (userOperator === '-' || userOperator === 'sottrazione') {
-    result = "sottrazione: " + (firstNumber - secondNumber);
+    //Stampo la sottrazione
+    result = "sottrazione: " + firstNumber +" - "+ secondNumber +' = ' + (firstNumber - secondNumber);
 } else if (userOperator === '+' || userOperator === 'addizione') { 
-    result = "addizione: " + (firstNumber + secondNumber);
+    //Stampo la addizione
+    result = "addizione: " + firstNumber +" + "+ secondNumber +' = ' + (firstNumber + secondNumber);
 } else if (userOperator === '/' || userOperator === ':' || userOperator === 'divisione') { 
-    result = "divisione: " + (firstNumber / secondNumber);
+    //Stampo la divisione
+    result = "divisione: " + firstNumber +" : "+ secondNumber +' = ' + (firstNumber / secondNumber);
 } else {
     alert('siamo spiacenti ma ' + userOperator + ' non è un operazione prevista');
     alert(' prova con moltiplicazione - sottrazione - addizione oppure divisione');
     window.location.reload();
 }
+
+// Ho pensato visto l'utilizzo del prompt per l'inserimento dei dati di usare l'alert per stampare l'esito
 alert(result);
 console.log(result);
 
