@@ -18,11 +18,10 @@ function hobby() {
 }
 
 const io = {
-  nome: "red", // proprietà
-  cognome: "Ferrari", // proprietà
-  eta: true, // proprietà
-  professione: 3, // proprietà
-  // metodo (ovvero una funzione ma sita all'interno di un oggetto)
+  nome: "Elisabetta", 
+  cognome: "Monaco", 
+  eta: true, 
+  professione: 'front-end developer ', 
   run: hobby(),
 };
 
