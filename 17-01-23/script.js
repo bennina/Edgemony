@@ -1,9 +1,13 @@
 const productsElement = document.querySelector(".productsList");
 const productsHero = document.querySelector(".hero");
-const downloadDataBtn = document.querySelector(".button");
+const createShop = document.querySelector(".button");
 const loaderElement = document.querySelector(".loader");
+const cartContainer = document.querySelector(".cartContainer");
+const cartBox = document.querySelector(".cart");
+const close = document.querySelector(".close");
 const cart = [];
-downloadDataBtn.addEventListener("click", () => {
+
+createShop.addEventListener("click", () => {
   loaderElement.textContent = "loading...";
   fetch("https://api.escuelajs.co/api/v1/products")
     .then((res) => res.json())
@@ -39,7 +43,6 @@ const dataManupulation = (data) => {
     const addCarts = document.createElement("button");
     addCarts.textContent = " Aggiungi al carrello";
     addCarts.className = "addCart";
-    addCarts.id = item.id;
 
     divContainer.appendChild(image);
     divContainer.appendChild(titleElement);
@@ -47,10 +50,37 @@ const dataManupulation = (data) => {
     divContainer.appendChild(indexContainer);
     divContainer.appendChild(addCarts);
     productsElement.appendChild(divContainer);
+
+    addCarts.addEventListener("click", () => {
+      alert(" Prodotto aggiunto al carrello");
+      loaderElement.textContent = "loading...";
+      cartContainer.style.display = "block";
+      cart[index] = item;
+      const cartCard = document.createElement("div");
+      cartCard.className = "card";
+      
+
+      const removeCarts = document.createElement("button");
+      removeCarts.textContent = " Rimuovi dal carrello";
+      removeCarts.className = "removecard";
+        
+      cartCard.appendChild(image);
+      cartCard.appendChild(titleElement);
+      cartCard.appendChild(descriptionElement);
+      cartCard.appendChild(indexContainer);
+        cartCard.appendChild(removeCarts);
+        
+      cartBox.appendChild(cartCard);
+        removeCarts.addEventListener("click", () => {
+            alert('prodotto rimosso');
+            cartBox.removeChild(cartCard);
+      });
+      console.log(cart);
+    });
   });
 };
 
-const addCart = document.querySelector(".addCart");
-addCart.addEventListener("click", () => {
-  alert("aggiunto al carrello");
+close.addEventListener("click", () => {
+  loaderElement.textContent = "";
+  cartContainer.style.display = "none";
 });

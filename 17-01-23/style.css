@@ -42,3 +42,21 @@ button:hover{
     height: calc(100vh - 20px);
     object-fit: cover;
 }
+
+
+.cartContainer{
+    display: none;
+    width: 50vw;
+    height: 100vh;
+    background: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+.close {
+    color: #fff;
+    text-align: right;
+    padding: 20px;
+}
