@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section class="cartContainer">
+        <div class="close"> X </div>
+        <div class="cart"></div>
+    </section>
+
+    <p class="loader"></p>
+
+    <section class="hero">
+        <div class="row align-center">
+            <div class="col-5">
+                <img class="hero__img" src="https://picsum.photos/900/900" alt="un nuovo modo di fare il bucato"
+                    width="100%">
+            </div>
+            <div class="col-5">
+                <h1>Un nuovo modo<br>
+                    di fare il bucato.</h1>
+                <button class="nuovo-prodotto"> INSERISCI PRODOTTI </button>
+                <button class="nuova-categoria"> INSERISCI CATEGORIA </button>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="shop-row">
+        <div class="row">
+            <aside class="filter-categories col-2">
+                <div class="p-2">
+                    <h2> Le noste categorie </h2>
+                    <ul class="showCategories"></ul>
+                </div>
+            </aside>
+            <div class="col-8">
+
+
+                <section class="bg-primary insert-categories">
+
+                    <div class="row align-center">
+                        <div class="col-5">
+                            <h2>Inserisci una nuova categoria</h2>
+                        </div>
+                        <div class="col-5 text-right">
+                            <button class="closeblock"> ANNULLA </button>
+                        </div>
+                    </div>
+
+                    <form id="addcategory" action="addcategory">
+
+                        <div class="row">
+                            <div class="col-5">
+                                <label for="name"> Titolo</label>
+                                <input type="text" name="name" placeholder="titolo" id="categoryName" />
+                            </div>
+                            <div class="col-5">
+                                <label for="image"> Immagine</label>
+                                <input type="url" name="image" placeholder="immagine" id="categoryImage" />
+                            </div>
+                            <div class="col-5">
+                                <input type="submit" value="INVIA">
+                            </div>
+                        </div>
+                    </form>
+                </section>
+
+                <section class="bg-primary insert-product">
+
+                    <div class="row align-center">
+                        <div class="col-5">
+                            <h2>Form Per inserire i prodotti</h2>
+                        </div>
+                        <div class="col-5 text-right">
+                            <button class="closeblock2"> ANNULLA </button>
+                        </div>
+                    </div>
+
+
+                    <form id="addProduct" action="addProduct">
+
+                        <div class="row">
+                            <div class="col-5">
+                                <label for="title"> Titolo</label>
+                                <input type="text" name="title" placeholder="titolo" id="title" />
+                            </div>
+                            <div class="col-5">
+                                <label for="price"> Prezzo</label>
+                                <input type="number" name="price" placeholder="prezzo" id="price" />
+                            </div>
+                            <div class="col-5">
+                                <label for="category"> Categoria</label>
+                                <input type="number" name="category" placeholder="categoria" id="category" />
+                            </div>
+                            <div class="col-5">
+                                <label for="image"> Immagine</label>
+                                <input type="text" name="image" placeholder="immagine" id="image" />
+                            </div>
+                            <div class="col-5">
+                                <label for="description"> Descrizione</label>
+                                <textarea id="description"></textarea>
+                            </div>
+                            <div class="col-5">
+                                <input type="submit" value="INVIA">
+                            </div>
+                        </div>
+                    </form>
+                </section>
+
+                <section class="product-row">
+
+                    <h2> I nostri Prodotti </h2>
+
+                    <div class="products row" id="showProducts"></div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
