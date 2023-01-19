@@ -111,6 +111,7 @@ const loopCategories = item => {
   });
 };
 const refreshProduct = item => {
+  
   const prodUl = document.querySelector(".card");
   prodUl.remove();
 }
@@ -169,12 +170,20 @@ const mostaElementoPerCategoria = (param) => {
   .then(res => res.json())
   .then(data => {
     console.log(data);
+    
+    if (data.length === 0) {
+      refreshProduct(data);
+      alert(
+        `Non ci sono prodotti nella categoria ` 
+      );
+    }
     if (data.statusCode >= 400 && data.statusCode < 500) {
       alert(
         `${param} NON CARICATO PER LE SEGUENTI RAGIONI: ` + data.message[0]
       );
     } else {
       data.forEach(element => {
+       
           refreshProduct(element);
           loopProduct(element);
       })
