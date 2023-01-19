@@ -41,6 +41,8 @@ const categoria = document.querySelector("#category");
 const descrizione = document.querySelector("#description");
 const immagine = document.querySelector("#image");
 
+
+
 // PRODUCT - FOR ADD
 showBlockProducts.addEventListener("click", () => { 
   showSectionAddProducts.classList.add("active");
@@ -90,14 +92,28 @@ const loopCategories = item => {
   const catUl = document.createElement("li");
   catUl.className = "cat";
 
-  const catLi = document.createElement("span");
-  catLi.className = "title";
+  const catLi = document.createElement("a");
+  catLi.className = "cat-title";
+  catLi.id = item.id;
   catLi.textContent = item.name;
+  catLi.setAttribute("href", "#"+item.id);
 
   catUl.append(catLi);
   showCategories.appendChild(catUl);
-};
 
+
+
+  catLi.addEventListener("click", (e) => { 
+    e.preventDefault();
+  
+    mostaElementoPerCategoria('categories/' + e.target.id + '/products');
+    
+  });
+};
+const refreshProduct = item => {
+  const prodUl = document.querySelector(".card");
+  prodUl.remove();
+}
 
 const loopProduct = item => {
   const prodUl = document.createElement("div");
@@ -115,7 +131,11 @@ const loopProduct = item => {
   prodimmagine.setAttribute("src", item.images);
   prodimmagine.setAttribute("alt", "#");
 
-  prodUl.append(prodimmagine,prodTitle, prodprice);
+  const addCarts = document.createElement("button");
+    addCarts.textContent = " Aggiungi al carrello";
+  addCarts.className = "addCart";
+  
+  prodUl.append(prodimmagine,prodTitle, prodprice,addCarts);
   showProducts.appendChild(prodUl);
 };
 
@@ -138,6 +158,25 @@ const mostaElemento = (param) => {
           alert( ' Questo parametro al momento non è disponibile ' );
         }
         
+      })
+    }
+  })
+  .catch(e => console.log("ERRORE: ", e));
+};
+
+const mostaElementoPerCategoria = (param) => {
+  fetch(`https://api.escuelajs.co/api/v1/` + param, )
+  .then(res => res.json())
+  .then(data => {
+    console.log(data);
+    if (data.statusCode >= 400 && data.statusCode < 500) {
+      alert(
+        `${param} NON CARICATO PER LE SEGUENTI RAGIONI: ` + data.message[0]
+      );
+    } else {
+      data.forEach(element => {
+          refreshProduct(element);
+          loopProduct(element);
       })
     }
   })
