@@ -124,7 +124,7 @@ const loopProductInCart = item => {
   
   const pdInCart = document.createElement("div");
   pdInCart.className = "row cardList";
-  pdInCart.id = item.id;
+  
 
   const divImg = document.createElement("div");
   divImg.className = "col-2";
@@ -154,6 +154,19 @@ const loopProductInCart = item => {
   pdInCart.append(divImg, divText, divBtn);
 
   addInCartProducts.appendChild(pdInCart);
+
+  removeCarts.addEventListener("click", (e) => { 
+    e.preventDefault();    
+    
+    pdInCart.remove();
+    cart.forEach((a, index) => {
+      if (a.id === item.id) {
+        cart.splice(index, 1);
+      }
+    });
+
+    countInCart(cart);
+  });
 }
 
 const loopProduct = item => {
@@ -184,7 +197,6 @@ const loopProduct = item => {
     e.preventDefault();
     console.log('PRODOTTO:' + e.target.id);
     addToCartElemento(e.target.id);
-    
   });
   
 };
@@ -271,8 +283,10 @@ const addToCartElemento = (param) => {
   .catch(e => console.log("ERRORE: ", e));
 }
 
+
+
 const countInCart = (cart) => {
-  console.log(cart.length);
+  
   const totals = document.querySelector(".total");
   totals.textContent = "";
   totals.textContent = cart.length;
