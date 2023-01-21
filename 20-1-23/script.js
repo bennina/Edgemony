@@ -1,5 +1,5 @@
-
-
+//import { productInCart } from "./cart.js";
+const addInCartProducts = document.querySelector(".elenco-prodotti");
 
 // CATEGORIES SELECTOR  - FOR VIEW
 const showCategories = document.querySelector(".showCategories");
@@ -74,14 +74,12 @@ const registraElemento = (nuovoProdotto, param) => {
   })
   .then(res => res.json())
   .then(data => {
-    console.log(data);
     if (data.statusCode >= 400 && data.statusCode < 500) {
       alert(
         `${param} NON CARICATO PER LE SEGUENTI RAGIONI: ` + data.message[0]
       );
     } else {
       alert(`${param} CARICATO CORRETTAMENTE!`);
-      console.log(data);
     }
   })
     .catch(e => console.log("ERRORE: ", e));
@@ -99,16 +97,11 @@ const loopCategories = item => {
   
   catLi.setAttribute("href", "#" + item.id);
   
-  
-
   catUl.append(catLi);
   showCategories.appendChild(catUl);
 
-
-
   catLi.addEventListener("click", (e) => { 
     e.preventDefault();
-    console.log(e.target.id);
     if (e.target.id === 'all') {
       mostaElementoPerCategoria('products');
     } else {
@@ -119,7 +112,6 @@ const loopCategories = item => {
 let all = document.querySelector("#all");
 all.addEventListener("click", (e) => { 
   e.preventDefault();
-  console.log(e.target.id);
   refreshProduct(e);
   mostaElemento('products');
 });
@@ -127,6 +119,40 @@ all.addEventListener("click", (e) => {
 const refreshProduct = item => {
   const prodUl = document.querySelector("#showProducts");
   prodUl.innerHTML = '';
+}
+const loopProductInCart = item => {
+  console.log(item);
+  const pdInCart = document.createElement("div");
+  pdInCart.className = "row cardList";
+
+  const divImg = document.createElement("div");
+  divImg.className = "col-2";
+  const prodimmagine = document.createElement("img");
+  prodimmagine.setAttribute("src", item.images[0]);
+  prodimmagine.setAttribute("alt", "#");
+
+  divImg.appendChild(prodimmagine);
+
+  const divText = document.createElement("div");
+  divText.className = "col-7";
+  const prodTitle = document.createElement("p");
+  prodTitle.className = "title";
+  prodTitle.textContent = item.title;
+
+  const prodprice = document.createElement("p");
+  prodprice.className = "price";
+  prodprice.textContent = item.price + ' €';  
+  divText.appendChild(prodTitle, prodprice);
+  const divBtn = document.createElement("div");
+  divBtn.className = "col-1";
+  const removeCarts = document.createElement("button");
+  removeCarts.textContent = " X ";
+  removeCarts.className = "removeCart";
+  removeCarts.id = item.id;
+  divBtn.appendChild(removeCarts);
+  pdInCart.append(divImg, divText, divBtn);
+
+  addInCartProducts.appendChild(pdInCart);
 }
 
 const loopProduct = item => {
@@ -146,18 +172,27 @@ const loopProduct = item => {
   prodimmagine.setAttribute("alt", "#");
 
   const addCarts = document.createElement("button");
-    addCarts.textContent = " Aggiungi al carrello";
+  addCarts.textContent = " Aggiungi al carrello";
   addCarts.className = "addCart";
+  addCarts.id = item.id;
   
   prodUl.append(prodimmagine,prodTitle, prodprice,addCarts);
   showProducts.appendChild(prodUl);
+
+  addCarts.addEventListener("click", (e) => { 
+    e.preventDefault();
+    console.log('PRODOTTO:' + e.target.id);
+    addToCartElemento(e.target.id);
+    
+  });
+  
 };
 
 const mostaElemento = (param) => {
   fetch(`https://api.escuelajs.co/api/v1/` + param, )
   .then(res => res.json())
   .then(data => {
-    console.log(data);
+    
     if (data.statusCode >= 400 && data.statusCode < 500) {
       alert(
         `${param} NON CARICATO PER LE SEGUENTI RAGIONI: ` + data.message[0]
@@ -182,7 +217,6 @@ const mostaElementoPerCategoria = (param) => {
   fetch(`https://api.escuelajs.co/api/v1/` + param, )
   .then(res => res.json())
   .then(data => {
-    console.log(data);
     
     if (data.length === 0) {
       refreshProduct(data);
@@ -205,8 +239,6 @@ const mostaElementoPerCategoria = (param) => {
   .catch(e => console.log("ERRORE: ", e));
 };
 
-
-
 const closeblock = document.querySelector(".closeblock");
 const closeblock2 = document.querySelector(".closeblock2");
 
@@ -220,6 +252,21 @@ closeblock2.addEventListener("click", () => {
   showSectionAddCategories.classList.remove("active");
 });
 
+const addToCartElemento = (param) => {
+  fetch(`https://api.escuelajs.co/api/v1/products/` + param, )
+  .then(res => res.json())
+  .then(data => {
+    if (data.statusCode >= 400 && data.statusCode < 500) {
+      alert(
+        `${param} NON AGGIUNTO: ` + data.message[0]
+      );
+    } else {
+      console.log(data);
+      loopProductInCart(data);
+    }
+  })
+  .catch(e => console.log("ERRORE: ", e));
+}
 
 mostaElemento('categories');
 mostaElemento('products');

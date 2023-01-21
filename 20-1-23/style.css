@@ -67,11 +67,20 @@ button:hover {
   background-color: #cb9096;
   border-bottom: solid #f4c7cb 5px;
 }
+.col-1 {
+  width: calc(10% - 20px);
+}
 .col-2 {
   width: calc(20% - 20px);
 }
 .col-5 {
   width: calc(50% - 20px);
+}
+.col-6 {
+  width: calc(60% - 20px);
+}
+.col-7 {
+  width: calc(70% - 20px);
 }
 .col-8 {
   width: calc(80% - 20px);
@@ -82,6 +91,33 @@ button:hover {
   background-color: #ebebeb;
   text-align: center;
   border-radius: 1px;
+}
+
+.cardList {
+  width: calc(100% - 20px);
+  background-color: #ebebeb;
+  text-align: center;
+  border-radius: 1px;
+  margin: 0 auto;
+  align-items: center;
+  margin-bottom:12px;
+}
+.cardList button {
+  width: 100%;
+  padding: 1em;
+}
+.cardList img {
+  width: 100%;
+}
+.cardList button.removeCart {
+  margin-bottom: 0px;
+  background-color: #ffffff;
+  border-bottom: solid #d5d5d5 5px;
+  color: #d5d5d5;
+}
+.cardList p {
+  margin: 0px;
+  text-align: left;
 }
 .m-0 {
   margin: 0;
@@ -107,19 +143,30 @@ button:hover {
 
 .cartContainer {
   display: none;
-  width: 50vw;
+  width: 100vw;
   height: 100vh;
-  background: #000;
+  background: rgb(255 255 255 / 43%);
   position: fixed;
   top: 0;
   left: 0;
   z-index: 999;
 }
-
-.close {
-  color: #fff;
+.cartContainer .content {
+  width: 40%;
+  height: 100vh;
+  background: rgb(172 100 100 / 76%);
+  float: right;
+}
+.closeCart {
   text-align: right;
   padding: 20px;
+}
+.closeCart a {
+  color: #fff;
+  font-size: 30px;
+  line-height: 20px;
+  text-decoration: none;
+  font-weight: bold;
 }
 .bg-secondary {
   background-color: #cb9096;
@@ -217,13 +264,13 @@ h3 {
 }
 
 .showCategories li a {
-    color: #cb9096;
-    text-transform: uppercase;
-    text-decoration: none;
-    letter-spacing: 2px;
+  color: #cb9096;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 2px;
 }
 
-.showCategories li a:hover{
-    color: #000;
-    font-weight: bold;
+.showCategories li a:hover {
+  color: #000;
+  font-weight: bold;
 }
