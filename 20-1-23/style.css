@@ -67,6 +67,20 @@ button:hover {
   background-color: #cb9096;
   border-bottom: solid #f4c7cb 5px;
 }
+
+.btn-alert {
+    background-color: #ff0017;
+    background-image: none;
+    border: unset;
+    border-bottom: solid #c80014 5px;
+}
+
+button.btn-alert:hover {
+    cursor: pointer;
+    background-color: #c80014;
+    border-bottom: solid #ff0017 5px;
+  }
+
 .col-1 {
   width: calc(10% - 20px);
 }

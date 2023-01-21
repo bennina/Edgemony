@@ -189,8 +189,13 @@ const loopProduct = item => {
   addCarts.textContent = " Aggiungi al carrello";
   addCarts.className = "addCart";
   addCarts.id = item.id;
+
+  const deleteProduct = document.createElement("button");
+  deleteProduct.textContent = "Cancella";
+  deleteProduct.className = "delete btn-alert";
+  deleteProduct.id = item.id;
   
-  prodUl.append(prodimmagine,prodTitle, prodprice,addCarts);
+  prodUl.append(prodimmagine,prodTitle, prodprice,addCarts, deleteProduct);
   showProducts.appendChild(prodUl);
 
   addCarts.addEventListener("click", (e) => { 
@@ -198,7 +203,38 @@ const loopProduct = item => {
     console.log('PRODOTTO:' + e.target.id);
     addToCartElemento(e.target.id);
   });
+
+  deleteProduct.addEventListener("click", (e) => { 
+    e.preventDefault();
+    if (confirm("Cancella!") == true) {
+      deleteElemento(e.target.id);
+    } else {
+    }
+    
+  });
   
+};
+const deleteElemento = (param) => {
+  alert('eliminato:' + param);
+
+  fetch(`https://api.escuelajs.co/api/v1/products/` + param, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then(res => res.json())
+    .then(data => {
+      console.log(data);
+      if (data.statusCode >= 400 && data.statusCode < 500) {
+        alert(
+          `${param} NON CARICATO PER LE SEGUENTI RAGIONI: ` + data.message[0]
+        );
+      } else {
+        alert(`${param} ELIMINATO CORRETTAMENTE!`);
+      }
+    })
+    .catch(e => console.log("ERRORE: ", e));
 };
 
 const mostaElemento = (param) => {
