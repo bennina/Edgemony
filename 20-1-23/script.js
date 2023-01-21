@@ -121,9 +121,10 @@ const refreshProduct = item => {
   prodUl.innerHTML = '';
 }
 const loopProductInCart = item => {
-  console.log(item);
+  
   const pdInCart = document.createElement("div");
   pdInCart.className = "row cardList";
+  pdInCart.id = item.id;
 
   const divImg = document.createElement("div");
   divImg.className = "col-2";
@@ -251,7 +252,7 @@ closeblock2.addEventListener("click", () => {
   showSectionAddProducts.classList.remove("active");
   showSectionAddCategories.classList.remove("active");
 });
-
+let cart = [];
 const addToCartElemento = (param) => {
   fetch(`https://api.escuelajs.co/api/v1/products/` + param, )
   .then(res => res.json())
@@ -261,12 +262,22 @@ const addToCartElemento = (param) => {
         `${param} NON AGGIUNTO: ` + data.message[0]
       );
     } else {
-      console.log(data);
+      
+      cart.push(data);
       loopProductInCart(data);
+      countInCart(cart);
     }
   })
   .catch(e => console.log("ERRORE: ", e));
 }
 
+const countInCart = (cart) => {
+  console.log(cart.length);
+  const totals = document.querySelector(".total");
+  totals.textContent = "";
+  totals.textContent = cart.length;
+}
+
+countInCart(cart);
 mostaElemento('categories');
 mostaElemento('products');
