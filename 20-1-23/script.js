@@ -33,6 +33,8 @@ const showBlockProducts = document.querySelector(".nuovo-prodotto");
 const showSectionProducts = document.querySelector(".product-row");
 const showSectionAddProducts = document.querySelector(".insert-product");
 
+const showSectionEditProducts = document.querySelector(".edit-product");
+
 // PRODUCT SELECTOR - FOR ADD
 const addProducts = document.querySelector("#addProduct");
 const titolo = document.querySelector("#title");
@@ -194,14 +196,23 @@ const loopProduct = item => {
   deleteProduct.textContent = "Cancella";
   deleteProduct.className = "delete btn-alert";
   deleteProduct.id = item.id;
+
+  const editProduct = document.createElement("button");
+  editProduct.textContent = "Modifica";
+  editProduct.className = "edit btn-edit";
+  editProduct.id = item.id;
   
-  prodUl.append(prodimmagine,prodTitle, prodprice,addCarts, deleteProduct);
+  prodUl.append(prodimmagine,prodTitle, prodprice,addCarts,editProduct, deleteProduct);
   showProducts.appendChild(prodUl);
 
   addCarts.addEventListener("click", (e) => { 
     e.preventDefault();
     console.log('PRODOTTO:' + e.target.id);
     addToCartElemento(e.target.id);
+  });
+  editProduct.addEventListener("click", (e) => { 
+    e.preventDefault();
+    modificaElemento(e.target.id, item);
   });
 
   deleteProduct.addEventListener("click", (e) => { 
@@ -210,10 +221,70 @@ const loopProduct = item => {
       deleteElemento(e.target.id);
     } else {
     }
-    
   });
   
 };
+
+const modificaElemento = (param, elemento) => {
+  console.log(elemento);
+  console.log(param);
+
+  // MOSTRO IL FORM
+  showSectionEditProducts.classList.add("active");
+  // COMPILO CON I DATI IL FORM
+  editID.value = elemento.id;
+  editTitle.value = elemento.title;
+  editPrice.value = elemento.price;
+  editCategory.value = elemento.category.id;
+  editImage.value = elemento.images[0];
+  editDescription.value = elemento.description;
+  
+}
+  const editID = document.getElementById("idPCT");
+  const editTitle = document.getElementById("editTitle");
+  const editPrice = document.getElementById("editPrice");
+  const editCategory = document.getElementById("editCategory");
+  const editImage = document.getElementById("editImage");
+  const editDescription = document.getElementById("editDescription");
+  const eP = document.getElementById("editProduct");
+
+eP.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const nuoveInformazioni = {
+    id: editID.value,
+    title: editTitle.value,
+    price: parseInt(editPrice.value),
+    description: editDescription.value,
+    categoryId: parseInt(editCategory.value),
+    images: [editImage.value],
+  };
+  editE(nuoveInformazioni, "products/", editID.value);
+});
+
+const editE = (nuoveInformazioni, param, id) => {
+  fetch(`https://api.escuelajs.co/api/v1/` + param + id, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(nuoveInformazioni),
+  })
+  .then(res => res.json())
+  .then(data => {
+    if (data.statusCode >= 400 && data.statusCode < 500) {
+      alert(
+        `${param} NON CARICATO PER LE SEGUENTI RAGIONI: ` + data.message[0]
+      );
+    } else {
+      alert(`${param} CARICATO CORRETTAMENTE!`);
+    }
+  })
+  .catch(e => console.log("ERRORE: ", e));
+  
+};
+
+
+
 const deleteElemento = (param) => {
   alert('eliminato:' + param);
 

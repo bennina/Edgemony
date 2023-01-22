@@ -124,6 +124,51 @@
                     </form>
                 </section>
 
+
+                <section class="bg-primary edit-product">
+
+                    <div class="row align-center">
+                        <div class="col-5">
+                            <h2>Form Per modificare i prodotti</h2>
+                        </div>
+                        <div class="col-5 text-right">
+                            <button class="closeblock3"> ANNULLA </button>
+                        </div>
+                    </div>
+
+
+                    <form id="editProduct" action="editProduct">
+
+                        <div class="row">
+                            <div class="col-5">
+                                <label for="editTitle"> Titolo</label>
+                                <input type="text" name="editTitle" placeholder="titolo" id="editTitle" />
+                                <input type="hidden" name="idPCT" id="idPCT" value="" />
+                            </div>
+                            <div class="col-5">
+                                <label for="editPrice"> Prezzo</label>
+                                <input type="number" name="editPrice" placeholder="prezzo" id="editPrice" />
+                            </div>
+                            <div class="col-5">
+                                <label for="editCategory"> Categoria</label>
+                                <input type="number" name="editCategory" placeholder="categoria" id="editCategory" />
+                            </div>
+                            <div class="col-5">
+                                <label for="editImage"> Immagine</label>
+                                <input type="text" name="editImage" placeholder="immagine" id="editImage" />
+                            </div>
+                            <div class="col-5">
+                                <label for="editDescription"> Descrizione</label>
+                                <textarea id="editDescription"></textarea>
+                            </div>
+                            <div class="col-5">
+                                <input type="submit" value="INVIA">
+                            </div>
+                        </div>
+                    </form>
+                </section>
+
+
                 <section class="bg-primary insert-product">
 
                     <div class="row align-center">
