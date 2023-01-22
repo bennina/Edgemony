@@ -361,13 +361,22 @@ const mostaElementoPerCategoria = (param) => {
 
 const closeblock = document.querySelector(".closeblock");
 const closeblock2 = document.querySelector(".closeblock2");
+const closeblock3 = document.querySelector(".closeblock3");
 
 closeblock.addEventListener("click", () => { 
+  showSectionEditProducts.classList.remove("active");
   showSectionAddProducts.classList.remove("active");
   showSectionAddCategories.classList.remove("active");
 });
 
 closeblock2.addEventListener("click", () => { 
+  showSectionEditProducts.classList.remove("active");
+  showSectionAddProducts.classList.remove("active");
+  showSectionAddCategories.classList.remove("active");
+});
+
+closeblock3.addEventListener("click", () => { 
+  showSectionEditProducts.classList.remove("active");
   showSectionAddProducts.classList.remove("active");
   showSectionAddCategories.classList.remove("active");
 });
