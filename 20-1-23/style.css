@@ -54,34 +54,45 @@ form {
 input[type="submit"],
 button {
   color: #000;
-  background-color: #f4c7cb;
+  background-color: #ffffff;
   background-image: none;
   border: unset;
-  border-bottom: solid #cb9096 5px;
+  border-radius: 30px;
+  margin: 5px;
   margin-bottom: 20px;
-  padding: 1em 2em;
+  padding: 10px 20px;
+  font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: bold;
 }
 button:hover {
-  cursor: pointer;
+  color: #ffffff;
   background-color: #cb9096;
-  border-bottom: solid #f4c7cb 5px;
+  
+  cursor: pointer;
+}
+.btn-edit {
+  color: #a0c800;
+  background-color: #ffffff;
+  
 }
 
+button.btn-edit:hover {
+  color: #ffffff;
+  background-color: #a0c800;
+  
+}
 .btn-alert {
-    background-color: #ff0017;
-    background-image: none;
-    border: unset;
-    border-bottom: solid #c80014 5px;
+  color: #c80014;
+  background-color: #ffffff;
+  
 }
 
 button.btn-alert:hover {
-    cursor: pointer;
-    background-color: #c80014;
-    border-bottom: solid #ff0017 5px;
-  }
+  color: #ffffff;
+  background-color: #c80014;
+}
 
 .col-1 {
   width: calc(10% - 20px);
@@ -116,7 +127,7 @@ button.btn-alert:hover {
   border-radius: 1px;
   margin: 0 auto;
   align-items: center;
-  margin-bottom:12px;
+  margin-bottom: 12px;
 }
 .cardList button {
   width: 100%;
@@ -128,9 +139,14 @@ button.btn-alert:hover {
 .cardList button.removeCart {
   margin-bottom: 0px;
   background-color: #ffffff;
-  border-bottom: solid #d5d5d5 5px;
   color: #d5d5d5;
 }
+
+.cardList button.removeCart:hover {
+    background-color: #d5d5d5;
+    color: #fff;
+}
+
 .cardList p {
   margin: 0px;
   text-align: left;

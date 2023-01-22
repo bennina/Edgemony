@@ -193,12 +193,12 @@ const loopProduct = item => {
   addCarts.id = item.id;
 
   const deleteProduct = document.createElement("button");
-  deleteProduct.textContent = "Cancella";
+  deleteProduct.innerHTML = '<i class="fa-solid fa-bucket"></i>';
   deleteProduct.className = "delete btn-alert";
   deleteProduct.id = item.id;
 
   const editProduct = document.createElement("button");
-  editProduct.textContent = "Modifica";
+  editProduct.innerHTML = '<i class="fa-solid fa-pen-to-square"></i>';
   editProduct.className = "edit btn-edit";
   editProduct.id = item.id;
   
@@ -217,7 +217,7 @@ const loopProduct = item => {
 
   deleteProduct.addEventListener("click", (e) => { 
     e.preventDefault();
-    if (confirm("Cancella!") == true) {
+    if (confirm("Sei sicuro di voler elimanare il prodotto?") == true) {
       deleteElemento(e.target.id);
     } else {
     }
