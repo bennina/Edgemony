@@ -1,0 +1,140 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+body{
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 1px;
+}
+.row,
+.wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .text-right{
+    text-align: right;
+  }
+  .col_3{
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 30%;
+    flex: 0 0 30%;
+    max-width: 30%;
+    position: relative;
+    width: 100%;
+  }
+  .col_7{
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 70%;
+    flex: 0 0 70%;
+    max-width: 70%;
+    position: relative;
+    width: 100%;
+  }
+  .col_3_3,
+  .user__card {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 33.33%;
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+    position: relative;
+    width: 100%;
+  }
+  .user__list {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    position: relative;
+    width: 100%;
+  }
+
+  .user__list .user__text {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: #000;
+  }
+  .user__list .user__text h3{
+    color: #fff;
+  }
+  .user__list .user__text p{
+    text-align: right;
+  }
+
+  .user__card .user__text {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: #F0F0F2;
+  }
+  .user__card .user__text h3{
+    color: #6F707B;
+  }
+  .user__card .user__text p{
+    
+  }
+  
+ 
+  button {
+    color: #E9E9EC;
+    background-color: #6F707B;
+    background-image: none;
+    border: unset;
+    border-radius: 30px;
+    margin: 5px;
+    
+    padding: 10px 20px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+  }
+  button:hover {
+    color: #6F707B;
+    background-color: #E9E9EC;
+    cursor: pointer;
+  }
+  
+  h2{
+    text-align: center;
+  }
+
+
+
+.grafico {
+  display: flex;
+  gap: 20px;
+  padding: 30px;
+  
+}
+
+.age-status-bar {
+  position: relative;
+  background-color: #E9E9EC;
+  border-radius: 3px;
+  height: 200px;
+  width: 60px;
+  transform: rotate(180deg);
+}
+
+.age-status-bar__status {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgb(195, 254, 137);
+  width: 100%;
+  transition: all 0.35s;
+}
+
+.age-status-bar h4 {
+  width: 60px;
+  position: absolute;
+  bottom: -40px;
+  color: #000;
+  font-weight: bold;
+  font-size: 0.5rem;
+  transform: rotate(180deg);
+  text-align: center;
+}
