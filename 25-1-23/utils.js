@@ -66,15 +66,15 @@ const ageStatusBarGen = (value) => {
     const grafico = qS(".grafico");
     value.forEach(e => {
         const wrapper = cE("div");
-        
+        const a = `${Object.keys(e.ages).length * 10}`;
         const textEl = cE("h4");
         const statusEl = cE("div");
   
         wrapper.className = "age-status-bar";
         textEl.textContent = e.text;
         statusEl.className = "age-status-bar__status";
-        statusEl.style.height = e.ages.reduce((a, b) => a + b, 0) + '%';
-        console.log();
+        statusEl.style.height = a + '%';
+        console.log(a);
         //   setInterval(() => {
         statusEl.style.backgroundColor = `#${Math.floor(
             Math.random() * 16777215
