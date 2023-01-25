@@ -1,37 +1,17 @@
-import {cE, qS, userCard} from "./utils.js";
-import { GET } from "./api.js";
+import {cE, qS, userCard, userGraph} from "./utils.js";
 import myJson from "./mock.json" assert { type: "json" };
+import { GET } from "./api.js";
 
 
-const grafico = qS(".grafico");
 let param = 'users';
 
 
 userCard(myJson[param]);
+userGraph(myJson[param]);
 
-let firstStage, secondStage, thirdStage, fourthStage, fifthStage;
-let stagesCount = [];
+//export {ageStatusBarGen};
 
-const ageStatusBarGen = (value, userAge) => {
-    const wrapper = cE("div");
-    const textEl = cE("h4");
-    const statusEl = cE("div");
-  
-    wrapper.className = "age-status-bar";
-    textEl.textContent = value;
-    statusEl.className = "age-status-bar__status";
-    statusEl.style.height = `${userAge * 10}%`;
-  
-    //   setInterval(() => {
-    statusEl.style.backgroundColor = `#${Math.floor(
-      Math.random() * 16777215
-    ).toString(16)}`;
-    //   }, 1000);
-  
-    wrapper.append(textEl, statusEl);
-    return wrapper;
-};
-  
+/*  
 GET("users")
   .then(({ users }) => {
     const usersAge = users.map((user) => user.age);
@@ -70,3 +50,5 @@ GET("users")
         grafico.appendChild(ageStatusBarGen(stage.text, stage.ages.length))
     );
 });
+
+*/
