@@ -20,7 +20,7 @@ const ageStatusBarGen = (value, userAge) => {
     wrapper.className = "age-status-bar";
     textEl.textContent = value;
     statusEl.className = "age-status-bar__status";
-    statusEl.style.height = `${userAge * 60}px`;
+    statusEl.style.height = `${userAge * 10}%`;
   
     //   setInterval(() => {
     statusEl.style.backgroundColor = `#${Math.floor(
