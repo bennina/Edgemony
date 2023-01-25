@@ -1,14 +1,14 @@
 import {cE, qS, userCard} from "./utils.js";
 import { GET } from "./api.js";
+import myJson from "./mock.json" assert { type: "json" };
 
-const wrapperEl = qS(".user-div");
+
 const grafico = qS(".grafico");
 let param = 'users';
 
 
-GET(param).then((data) =>
-    data.users.map((users) => wrapperEl.appendChild(userCard(users)))
-);
+userCard(myJson[param]);
+
 let firstStage, secondStage, thirdStage, fourthStage, fifthStage;
 let stagesCount = [];
 
