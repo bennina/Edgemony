@@ -23,8 +23,9 @@ const userCard = (data, name) => {
         return wrapperEl;
     
     } else {
-        if (name === data.firstName) {
-            const wrapperEl = cE("div");
+        const wrapperEl = cE("div");
+        if (name.toLowerCase() === data.firstName.toLowerCase()) {
+            
             wrapperEl.className = "card";
             const names = cE("p");
             const email = cE("p");
@@ -38,9 +39,9 @@ const userCard = (data, name) => {
             
             phone.innerHTML = data.phone;
             wrapperEl.append(names, images, email, phone);
-            return wrapperEl;
+            
         }
-       
+        return wrapperEl;
     }
 
 
