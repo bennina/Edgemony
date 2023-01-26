@@ -11,22 +11,6 @@ timerContainer.append(titleEl, stopBtnEl);
 
 
 const intervalId = setInterval(() => {
-  titleEl.textContent = `${new Date().getSeconds()}s`;
-}, 1000);
-
-
-
-  
-
-
-let timeout = 5;
-stopBtnEl.addEventListener("click", () => { 
-    console.log('click');
-    clearTimeout(intervalId);
-});
-
-setInterval(() => {
-    
     if (timeout === 0) {
         bodyEl.style.backgroundColor = "#9c9c9c";
         titleEl.remove();
@@ -34,4 +18,10 @@ setInterval(() => {
         timeout--;
         titleEl.textContent = timeout;
     }
+    
 }, 1000);
+
+let timeout = 5;
+stopBtnEl.addEventListener("click", () => { 
+    clearInterval(intervalId);
+});
