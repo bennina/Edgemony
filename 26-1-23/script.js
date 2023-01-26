@@ -7,7 +7,7 @@ stopBtnEl.textContent = "stop";
 timerContainer.append(titleEl, stopBtnEl);
 
 // Timemout
-
+let timeout = 5;
 
 
 const intervalId = setInterval(() => {
@@ -21,7 +21,7 @@ const intervalId = setInterval(() => {
     
 }, 1000);
 
-let timeout = 5;
+
 stopBtnEl.addEventListener("click", () => { 
     clearInterval(intervalId);
 });
