@@ -7,13 +7,14 @@ stopBtnEl.textContent = "stop";
 timerContainer.append(titleEl, stopBtnEl);
 
 // Timemout
-let timeout = 10;
+let timeout = 3;
 
 
 const intervalId = setInterval(() => {
     if (timeout === 0) {
         bodyEl.style.backgroundColor = "#9c9c9c";
-        titleEl.remove();
+       // titleEl.remove();
+        titleEl.innerHTML = 'COUNTDOWN TERMINATO';
     } else {
         timeout--;
         titleEl.textContent = timeout;
