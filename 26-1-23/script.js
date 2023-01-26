@@ -27,7 +27,7 @@ stopBtnEl.addEventListener("click", () => {
 setInterval(() => {
     
     if (timeout === 0) {
-        bodyEl.style.backgroundColor = "tomato";
+        bodyEl.style.backgroundColor = "#9c9c9c";
         titleEl.remove();
     } else {
         timeout--;
