@@ -7,7 +7,7 @@ stopBtnEl.textContent = "stop";
 timerContainer.append(titleEl, stopBtnEl);
 
 // Timemout
-let timeout = 5;
+let timeout = 10;
 
 
 const intervalId = setInterval(() => {
