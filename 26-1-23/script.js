@@ -1,9 +1,10 @@
 const bodyEl = document.body;
+const timerContainer = document.querySelector('.timer');
 const titleEl = document.createElement("h1");
 const stopBtnEl = document.createElement("button");
 
 stopBtnEl.textContent = "stop";
-bodyEl.append(titleEl, stopBtnEl);
+timerContainer.append(titleEl, stopBtnEl);
 
 // Timemout
 
