@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300&display=swap');
+
+section.popular{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.movie{
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 30%;
+    flex: 0 0 30%;
+    max-width: 30%;
+    position: relative;
+    width: 100%;
+    background-color: #0b0819;
+}
+.movie p{
+    text-align: center;
+    color: aliceblue;
+    font-family: 'Montserrat Alternates', sans-serif;
+    width: 90%;
+    margin: 0 auto;
+    padding: 2em;
+}
+.movie img{
+    width: 100%;
+}
+h2{
+    text-align: center;
+}
