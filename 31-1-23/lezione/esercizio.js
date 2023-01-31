@@ -12,7 +12,7 @@ ha avviato l'app <b>${data.getDate()}/${data.getMonth()}/${data.getFullYear()}</
 
 const server = http.createServer((req, res) => {
     if (req.url === '/')
-        req.end(message);
+        res.end(message);
 })
 
 server.listen(3001);
