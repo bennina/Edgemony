@@ -6,5 +6,6 @@
 
 > Quindi, create un nuovo progetto, preparate la vostra risorsa, attivate postman e buon divertimento.
 >>Fatto!!
-Solo un'ultima cosa: se non lo avete già fatto provate in postman la chiamata post sulla route /login in modo che sia pronta per domani per essere collegata alla form. Visto che ci siete, aggiungete anche il controllo sullo stato 400.
+
+>Solo un'ultima cosa: se non lo avete già fatto provate in postman la chiamata post sulla route /login in modo che sia pronta per domani per essere collegata alla form. Visto che ci siete, aggiungete anche il controllo sullo stato 400.
 >>Fatto!!
