@@ -31,6 +31,16 @@ app.get('/about' , (req, res) =>{
     })
 })
 
+
+
+app.get('/mi-presento' , (req, res) =>{
+    res.render('mi-presento', {
+        titolo: "Mi presento",
+        myPreferences: myPreferences[0],
+    })
+})
+
+
 app.get('/login' , (req, res) =>{
     res.render('login', {
         titolo: "Accedi",
