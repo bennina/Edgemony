@@ -10,7 +10,7 @@ header {
     align-items: center;
     padding-left: 20px;
     padding-right: 20px;
-    background-color: #E8EFFB;
+    background-color: #3A5A8E;
   }
   header .logo {
     width: 20%;
@@ -35,7 +35,7 @@ header {
     text-transform: uppercase;
   }
   header nav ul a{
-    color: #3A5A8E;
+    color: #ecb506;
   }
   header nav ul {
     list-style: none;
@@ -80,7 +80,7 @@ header {
 
   .icon a{
     text-decoration: none;
-    color: #3A5A8E;
+    color: #ecb506;
   }
   .icon svg {
     height: 30px;
@@ -90,22 +90,22 @@ header {
 
 footer{
     padding: 2em;
-    color: #3A5A8E;
-    background-color: #E8EFFB;
+    color: #ecb506;
+    background-color: #3A5A8E;
 }
 
 input{
     width: calc(100% - 10px);
-    border-color: #3A5A8E;
+    border-color: #ecb506;
     padding-top: 20px;
     padding-bottom: 20px;
     margin-bottom: 5px;
 }
 
 button{
-    border-color: #3A5A8E;
-    background-color: #3A5A8E;
-    color: #E8EFFB;
+    border-color: #ecb506;
+    background-color: #ecb506;
+    color: #3A5A8E;
     width: 100%;
     padding: 20px 5px;
 }
