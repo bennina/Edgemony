@@ -6,4 +6,4 @@
 > FATTO
 
 ###### Come ultima cosa, ma è più facoltativa anche se credo siate in grado di farlo, nella pagina mi-presento dovete creare un form che invia un dato, come nell' esempio già fatto, in relazione ad una chiamata POST che andrete a configurare in app. Questa volta però il response non a semplice stringa da metodo send ma atterrerà su una pagina login che dovrete configurare con render() nel metodo POST.
-> TERMINO I PUNTI SOPRA E POI PROVO
+> Creato il form ma non funziona!
