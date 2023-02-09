@@ -11,14 +11,20 @@
 
     {{> header }}
    
-    {{> hero }}
-    <section>
-        <form action="login">
-            <input type="text" name="username" id="username" placeholder="username">
-            <input type="passwor" name="password" id="password" placeholder="password">
-            <button type="submit"> LOGIN </button>
-        </form>
-    </section>
+
+
+    <div class="row">
+        <div class="col-5">
+            <form action="login">
+                <input type="text" name="username" id="username" placeholder="username">
+                <input type="passwor" name="password" id="password" placeholder="password">
+                <button type="submit"> LOGIN </button>
+            </form>
+        </div>
+        <div class="col-5">
+            {{> hero }}
+        </div>
+   </div>
     
     {{> footer }}
 </body>

@@ -9,7 +9,19 @@
 </head>
 <body>
    {{> header }}
-    <h1>pagina about: {{titolo}}</h1>
+    
+    <div class="row">
+        <div class="col-5">
+            <h1>pagina about: {{titolo}}</h1>
+            
+            <p>Il mio animale preferito: <span><b>{{ myPreferences.pet }}</b></span></p>
+            <p>Il mia stagione preferita: <span><b>{{ myPreferences.season }}</b></span></p>
+            <p>Il mio colore preferito: <span><b>{{ myPreferences.color }}</b></span></p>
+        </div>
+        <div class="col-5">
+            {{> hero }}
+        </div>
+   </div>
    {{> footer }}
 </body>
 </html>

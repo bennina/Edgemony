@@ -19,7 +19,7 @@ app.get('/' , (req, res) =>{
     res.render('home' ,{
         nome: "Elisabetta",
         titolo: "Esercitazione",
-        myPreferences: myPreferences,
+        myPreferences: myPreferences[0],
     })
 })
 
@@ -27,10 +27,15 @@ app.get('/' , (req, res) =>{
 app.get('/about' , (req, res) =>{
     res.render('about', {
         titolo: "Chi sono io",
-        myPreferences: myPreferences,
+        myPreferences: myPreferences[0],
     })
 })
 
+app.get('/login' , (req, res) =>{
+    res.render('login', {
+        titolo: "Accedi",
+    })
+})
 
 
 

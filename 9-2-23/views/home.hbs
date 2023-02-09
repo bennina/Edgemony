@@ -10,15 +10,22 @@
 <body>
 
     {{> header }}
-   
-    <h1>Ciao {{nome}}</h1>
-    <h2>Il titolo è: {{titolo}}</h2>
+    <div class="row">
+        <div class="col-5">
+            <h1>Ciao {{nome}}</h1>
+            <h2>Il titolo è: {{titolo}}</h2>
 
-    <p>Il mio animale preferito: <span><b>{{ myPreferences.pet }}</b></span></p>
-    <p>Il mia stagione preferita: <span><b>{{ myPreferences.season }}</b></span></p>
-    <p>Il mio colore preferito: <span><b>{{ myPreferences.color }}</b></span></p>
+            <p>Il mio animale preferito: <span><b>{{ myPreferences.pet }}</b></span></p>
+            <p>Il mia stagione preferita: <span><b>{{ myPreferences.season }}</b></span></p>
+            <p>Il mio colore preferito: <span><b>{{ myPreferences.color }}</b></span></p>
+        </div>
+        <div class="col-5">
+            {{> hero }}
+        </div>
+   </div>
     
-    {{> hero }}
+    
+    
 
 {{> footer }}
 </body>
