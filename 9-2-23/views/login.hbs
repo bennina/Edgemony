@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/stile.css">
+    <title>{{titolo}}</title>
+</head>
+<body>
+
+    {{> header }}
+   
+    {{> hero }}
+    <section>
+        <form action="login">
+            <input type="text" name="username" id="username" placeholder="username">
+            <input type="passwor" name="password" id="password" placeholder="password">
+            <button type="submit"> LOGIN </button>
+        </form>
+    </section>
+    
+    {{> footer }}
+</body>
+</html>
