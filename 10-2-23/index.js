@@ -28,6 +28,7 @@ app.get('/about', (req, res) => {
 app.get('/blog', (req, res) => {
     res.render('blog', {
         titolo: "Blog",
+        data: articoli
     })
 })
 
