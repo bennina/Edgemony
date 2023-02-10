@@ -111,7 +111,10 @@ footer {
     color: #ecb506;
     background-color: #3A5A8E;
 }
-
+.bg-light{
+    background-color: #3A5A8E;
+    padding: 2em;
+}
 input {
     width: calc(100% - 10px);
     border-color: #ecb506;
