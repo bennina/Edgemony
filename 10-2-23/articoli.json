@@ -10,6 +10,7 @@
     "american",
     "crime"
     ],
+    "image": "https://picsum.photos/500/500",
     "reactions": 2
     },
     {
@@ -22,6 +23,7 @@
     "fiction",
     "english"
     ],
+    "image": "https://picsum.photos/500/500",
     "reactions": 2
     },
     {
@@ -34,6 +36,7 @@
     "history",
     "french"
     ],
+    "image": "https://picsum.photos/500/500",
     "reactions": 5
     },
     {
@@ -46,6 +49,7 @@
     "english",
     "american"
     ],
+    "image": "https://picsum.photos/500/500",
     "reactions": 1
     },
     {
@@ -58,6 +62,7 @@
     "mystery",
     "love"
     ],
+    "image": "https://picsum.photos/500/500",
     "reactions": 2
     }
     ]

@@ -11,6 +11,18 @@
 
     {{> header }}
     {{> hero }}
+    <div class="text-center">
+        <h2> I miei articoli  </h2>
+    </div>
+    
+    <div class="row">
+    {{#each data}}
+        {{> singolo }}
+    {{/each}}
+    </div>
+    
+
     {{> footer }}
+
 </body>
 </html>

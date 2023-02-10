@@ -55,7 +55,7 @@ header nav ul {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
-    align-items: center;
+    justify-content: center;
 }
 
 .col-1 {
@@ -64,6 +64,11 @@ header nav ul {
 
 .col-2 {
     width: calc(20% - 20px);
+}
+
+
+.col-3 {
+    width: calc(30% - 20px);
 }
 
 .col-5 {

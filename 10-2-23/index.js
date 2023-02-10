@@ -1,6 +1,6 @@
 const express = require('express')
 const hbs = require('hbs')
-const articoli = require('./articoli.json')
+const articoli = require('./articoli')
 
 const app = express()
 const PORT = 4000
@@ -12,16 +12,16 @@ app.use(express.static('./public'))
 app.get('/', (req, res) => {
     res.render('home', {
         nome: "Elisabetta",
-        titolo: "Esercitazione",
-        pageImage: 'https://picsum.photos/id/237/200/300',
+        title: "Io sono la pagina iniziale",
+        pageImage: 'https://picsum.photos/1000/800',
     })
 })
 
 
 app.get('/about', (req, res) => {
     res.render('about', {
-        titolo: "Chi sono",
-        pageImage: 'https://picsum.photos/id/237/200/300',
+        title: "Io sono la pagina: about",
+        pageImage: 'https://picsum.photos/1000/800',
     })
 })
 
@@ -29,8 +29,8 @@ app.get('/about', (req, res) => {
 
 app.get('/blog', (req, res) => {
     res.render('blog', {
-        titolo: "Blog",
-        pageImage: 'https://picsum.photos/id/237/200/300',
+        title: "Io sono il Blog",
+        pageImage: 'https://picsum.photos/1000/800',
         data: articoli
     })
 })
@@ -38,8 +38,8 @@ app.get('/blog', (req, res) => {
 
 app.get('/login', (req, res) => {
     res.render('login', {
-        titolo: "Accedi",
-        pageImage: 'https://picsum.photos/id/237/200/300',
+        title: "Accedi",
+        pageImage: 'https://picsum.photos/1000/800',
     })
 })
 
