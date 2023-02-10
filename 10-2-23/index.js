@@ -43,6 +43,11 @@ app.get('/login', (req, res) => {
     })
 })
 
+app.get('*', (req, res) => {
+    res.send('404! Not found')
+})
+
+
 app.listen(PORT, () => {
     console.log(`Server attivo su ${PORT}`)
 })

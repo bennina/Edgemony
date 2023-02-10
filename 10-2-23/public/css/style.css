@@ -51,6 +51,10 @@ header nav ul {
     justify-content: end;
 }
 
+.hero .row{
+    align-items: center;
+}
+
 .row {
     display: flex;
     gap: 20px;
