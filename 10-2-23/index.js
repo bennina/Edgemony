@@ -13,13 +13,15 @@ app.get('/', (req, res) => {
     res.render('home', {
         nome: "Elisabetta",
         titolo: "Esercitazione",
+        pageImage: 'https://picsum.photos/id/237/200/300',
     })
 })
 
 
 app.get('/about', (req, res) => {
     res.render('about', {
-        titolo: "Chi sono io",
+        titolo: "Chi sono",
+        pageImage: 'https://picsum.photos/id/237/200/300',
     })
 })
 
@@ -28,6 +30,7 @@ app.get('/about', (req, res) => {
 app.get('/blog', (req, res) => {
     res.render('blog', {
         titolo: "Blog",
+        pageImage: 'https://picsum.photos/id/237/200/300',
         data: articoli
     })
 })
@@ -36,6 +39,7 @@ app.get('/blog', (req, res) => {
 app.get('/login', (req, res) => {
     res.render('login', {
         titolo: "Accedi",
+        pageImage: 'https://picsum.photos/id/237/200/300',
     })
 })
 
