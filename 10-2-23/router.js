@@ -1,38 +1,48 @@
 const express = require('express')
 const router = express.Router()
+
 router.get('/', (req, res) => {
     res.render('home', {
-        nome: "Elisabetta",
         title: "Io sono la pagina iniziale",
-        pageImage: 'https://picsum.photos/1000/800',
+        subtitle: " ",
+        pagepath: " "
     })
 })
 
 
 router.get('/about', (req, res) => {
     res.render('about', {
-        title: "Io sono la pagina: about",
-        pageImage: 'https://picsum.photos/1000/800',
+        title: "CHI SONO",
+        subtitle: "Corsi",
+        pagepath: "Chi sono"
+    })
+})
+
+router.get('/contatti', (req, res) => {
+    res.render('contatti', {
+        title: "WEB DESIGN",
+        subtitle: "Sviluppo web",
+        pagepath: "Contatti"
     })
 })
 
 
-
-router.get('/blog', (req, res) => {
-    res.render('blog', {
-        title: "Io sono il Blog",
-        pageImage: 'https://picsum.photos/1000/800',
-        data: articoli
+router.get('/formazione', (req, res) => {
+    res.render('formazione', {
+        title: "FORMAZIONE",
+        subtitle: "Corsi",
+        pagepath: "Servizi/Formazione"
     })
 })
 
-
-router.get('/login', (req, res) => {
-    res.render('login', {
-        title: "Accedi",
-        pageImage: 'https://picsum.photos/1000/800',
+router.get('/web-design', (req, res) => {
+    res.render('web-design', {
+        title: "WEB DESIGN",
+        subtitle: "Sviluppo web",
+        pagepath: "Servizi/Web Design"
     })
 })
+
 
 router.get('*', (req, res) => {
     res.send('404! Not found')
