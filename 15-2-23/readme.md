@@ -22,7 +22,7 @@
     >> find Many
         >>> fatto
 > Modifico/aggiorno 
-
+    >>> fatto
 > Cancello.
     >> fatto
 

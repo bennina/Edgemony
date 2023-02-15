@@ -101,3 +101,16 @@ MongoClient.connect(url, (err, db) => {
     })
 })
 */
+
+MongoClient.connect(url, (err, db) => {
+    if (err) throw err;
+    let dbase = db.db("school");
+
+    let query = {corsi: "Lettere"}
+    let newValue = {$set: {corsi: "Letteratura Italiana"}}
+    dbase.collection('students').updateOne(query, newValue ,function(err, res) {
+        if (err) throw err;
+        console.log(`record(s) aggiornati` )
+        db.close();
+    })
+})
