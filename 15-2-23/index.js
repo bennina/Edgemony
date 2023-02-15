@@ -1,6 +1,7 @@
 const MongoClient = require("mongodb").MongoClient;
 let url = "mongodb+srv://elisabettamonaco:0rqU0e67fEer4Wee@cluster0.zhgxdjx.mongodb.net/school?retryWrites=true";
 
+//CONNESSIONE AL DB SCHOOL
 MongoClient.connect(url)
   .then((db) => {
     accountsDb = db;
@@ -11,6 +12,7 @@ MongoClient.connect(url)
     console.log(err);
   });
 /*
+//CREAZIONE COLLEZIONE students
 MongoClient.connect(url, function (err, db) {
   if (err) throw err;
   let dbase = db.db("school");
@@ -22,6 +24,7 @@ MongoClient.connect(url, function (err, db) {
   });
 });
 
+//CREAZIONE COLLEZIONE courses
 MongoClient.connect(url, function (err, db) {
   if (err) throw err;
   let dbase = db.db("school");
@@ -32,7 +35,7 @@ MongoClient.connect(url, function (err, db) {
     db.close();
   });
 });
-//Aggiungi dati alla collection
+//Aggiungi dati alla collection students
 MongoClient.connect(url, (err, db) => {
   if (err) throw err;
   let dbase = db.db("school");
@@ -48,7 +51,7 @@ MongoClient.connect(url, (err, db) => {
     db.close();
   });
 });
-//Aggiungi dati alla collection
+//Aggiungi dati alla collection courses
 MongoClient.connect(url, (err, db) => {
   if (err) throw err;
   let dbase = db.db("school");
@@ -77,7 +80,7 @@ MongoClient.connect(url, (err, db) =>{
     })
 })
 
-
+//Trova molti dati
 MongoClient.connect(url, (err, db) => {
     if (err) throw err;
     let dbase = db.db("school");
@@ -88,7 +91,7 @@ MongoClient.connect(url, (err, db) => {
     })
 })
 
-//Cancella dati
+//Cancella molti dati
 MongoClient.connect(url, (err, db) => {
     if (err) throw err;
     let dbase = db.db("school");
@@ -102,6 +105,7 @@ MongoClient.connect(url, (err, db) => {
 })
 */
 
+//Mofidica dato
 MongoClient.connect(url, (err, db) => {
     if (err) throw err;
     let dbase = db.db("school");
