@@ -10,6 +10,21 @@
 ###### La collection student raccoglie, nome, cognome, matricola (scegliete un codice numerico), corsi ai quali lo studente è iscritto, esami da sostenere. Nella collection courses: nome del corso, materia, docenti.
 > fatto
 
-###### Inserite per ogni collections un discreto numero di documenti sui quali dovrete applicare le 4 operazioni CRUD: Creo, Leggo, Modifico/aggiorno, Cancello.
+###### Inserite per ogni collections un discreto numero di documenti sui quali dovrete applicare le 4 operazioni CRUD: 
+> Creo 
+    >> insert one
+        >>> fatto
+    >> insert Many
+        >>> fatto
+> Leggo 
+    >> find one
+        >>> fatto
+    >> find Many
+        >>> fatto
+> Modifico/aggiorno 
+
+> Cancello.
+    >> fatto
 
 ###### Utilizzate le opzioni di find => One / Many e così di insert.
+>>> fatto
