@@ -12,19 +12,26 @@
 
 ###### Inserite per ogni collections un discreto numero di documenti sui quali dovrete applicare le 4 operazioni CRUD: 
 > Creo 
-    >> insert one
-        >>> fatto
-    >> insert Many
-        >>> fatto
+
+>> insert one
+>>> fatto
+
+>> insert Many
+>>> fatto
+
 > Leggo 
-    >> find one
-        >>> fatto
-    >> find Many
-        >>> fatto
+
+>> find one
+>>> fatto
+
+>> find Many
+>>> fatto
+
 > Modifico/aggiorno 
-    >>> fatto
+>>> fatto
+
 > Cancello.
-    >> fatto
+>> fatto
 
 ###### Utilizzate le opzioni di find => One / Many e così di insert.
 >>> fatto
