@@ -3,6 +3,8 @@ const express = require('express');
 const hbs = require('hbs');
 const bodyparser = require('body-parser');
 const routes = require('./controllers/routes');
+const fatture = require('./controllers/fattureroutes');
+
 let app = express();
 const PORT = 3000
 
@@ -14,6 +16,8 @@ app.use(express.static('./public'))
 app.use(bodyparser.urlencoded({
     extended: true
 }));
+
+app.use('/',fatture);
 app.use('/', routes);
 
 
