@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 mongoose.set('strictQuery', true);
-
-mongoose.connect('mongodb+srv://db_user:mongo_sim@mycluster.azlqk.mongodb.net/demo5?retryWrites=true&w=majority',
+let url = "";
+mongoose.connect('mongodb+srv://elisabettamonaco:0rqU0e67fEer4Wee@cluster0.zhgxdjx.mongodb.net/demo5?retryWrites=true&w=majority',
     {
         useNewUrlParser: true,
         useUnifiedTopology: true
@@ -16,3 +16,4 @@ mongoose.connect('mongodb+srv://db_user:mongo_sim@mycluster.azlqk.mongodb.net/de
 
 
 require('./nota');
+require('./fattura');
