@@ -65,9 +65,31 @@ section.hero {
 .hero__content>.row{
     align-items: center;
 }
+.hero p{
+  color: #fff;
+}
 .hero h1,
 .hero h3{
     color: #fff;
     text-transform: uppercase;
     font-weight: 300;
+}
+
+input{
+  width: calc(100% - 40px);
+  border-color: #F28B0C;
+  background-color: #000;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 5px;
+  padding-left: 35px;
+  color: #F28B0C;
+}
+
+button{
+  border-color: #F28B0C;
+  background-color: #F28B0C;
+  color: #fff;
+  width: 100%;
+  padding: 20px 5px;
 }
