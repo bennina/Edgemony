@@ -162,3 +162,26 @@ h2{
 svg.octicon-heart {
     fill: #fff;
 }
+
+.modal-movies{
+    display: none;
+}
+.modal-movies {
+    position: fixed;
+    top: 0;
+    background: #000;
+    padding: 6em 5em;
+    z-index: 99;
+    color: #fff;
+    height: 100vh;
+}
+.modal-movies .row{
+    align-items: center;
+}
+.close {
+    text-align: right;
+}
+
+.modal-content{
+    padding: 2em;
+}
