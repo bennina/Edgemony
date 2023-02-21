@@ -1,0 +1,73 @@
+header {
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  position: fixed;
+  z-index: 9;
+  width: calc(100% - 20px);
+  background: #000;
+}
+header .logo {
+  width: 20%;
+}
+
+header a {
+  display: block;
+  text-decoration: unset;
+  color: #fff;
+}
+
+header nav {
+  float: right;
+  width: 80%;
+  text-align: right;
+}
+header nav li {
+  font-size: 16px;
+  line-height: 20px;
+  width: fit-content;
+  float: right;
+  padding: 20px;
+  text-transform: uppercase;
+}
+
+header nav ul {
+  list-style: none;
+  padding: 0px;
+  height: 100%;
+  display: flex;
+  justify-content: end;
+}
+
+/* HERO */
+
+.hero>img {
+  position: absolute;
+  top: 0;
+  height: calc(80vh - 100px);
+  object-fit: cover;
+  filter: brightness(0.3);
+}
+section.hero {
+  display: flex;
+  height: calc(80vh - 100px);
+  align-items: center;
+  overflow: hidden;
+  padding-top: 100px;
+  
+}
+.hero__content {
+    width: calc(100% - 20px);
+    position: relative;
+    padding-left: 20px;
+}
+.hero__content>.row{
+    align-items: center;
+}
+.hero h1,
+.hero h3{
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 300;
+}
