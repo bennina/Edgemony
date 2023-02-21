@@ -86,7 +86,7 @@ input{
   color: #F28B0C;
 }
 
-button{
+.hero button{
   border-color: #F28B0C;
   background-color: #F28B0C;
   color: #fff;
