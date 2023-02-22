@@ -1,4 +1,4 @@
-import { GET } from "./api.js";
+import { GET, USER } from "./api.js";
 import { qS, qSA, newCard, HG } from "./utils.js";
 const highlights = qS(".highlights");
 const ys = qS("#year-section .loop-movies");
@@ -24,11 +24,7 @@ Promise.all([GET("tv", "top_rated")]).then((data) => {
     data[0].results.map((movie) => popular.append(newCard(movie)));
 });
 
-
-Promise.all([GET("tv", "top_rated")]).then((data) => {
-    data[0].results.map((movie) => myList.append(newCard(movie)));
+Promise.all([USER("account")]).then((data) => {
+    console.log(data);
 });
 
-Promise.all([GET("tv", "top_rated")]).then((data) => {
-    data[0].results.map((movie) => tvShow.append(newCard(movie)));
-});
