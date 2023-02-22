@@ -16,7 +16,9 @@ const newCard = (data) => {
     cardDescription.className = "cat-info";
 
     const rating = cE('fieldset');
-    rating.innerHTML = '<fieldset class="rating"> <input type="radio" id="star5" name="rating" value="5" /><label class="full" for="star5" title="Awesome - 5 stars"></label> <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label> <input type="radio" id="star4" name="rating" value="4" /><label class="full" for="star4" title="Pretty good - 4 stars"></label> <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label> <input type="radio" id="star3" name="rating" value="3" /><label class="full" for="star3" title="Meh - 3 stars"></label> <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label> <input type="radio" id="star2" name="rating" value="2" /><label class="full" for="star2" title="Kinda bad - 2 stars"></label> <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label> <input type="radio" id="star1" name="rating" value="1" /><label class="full" for="star1" title="Sucks big time - 1 star"></label> <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label></fieldset>'
+    rating.className = "rating";
+    
+    rating.innerHTML = '<input type="radio" id="'+data.title+'star10" name="rating" value="10"/><label class="full" for="'+data.title+'star10" title="Awesome - 10 stars"></label><input type="radio" id="'+data.title+'star9" name="rating" value="9" /><label class="full" for="'+data.title+'star9" title="Awesome - 9 stars"></label><input type="radio" id="'+data.title+'star8" name="rating" value="8" /><label class="full" for="'+data.title+'star8" title="Awesome - 8 stars"></label><input type="radio" id="'+data.title+'star7" name="rating" value="7" /><label class="full" for="'+data.title+'star7" title="Awesome - 7 stars"></label><input type="radio" id="'+data.title+'star6" name="rating" value="6" /><label class="full" for="'+data.title+'star6" title="Awesome - 6 stars"></label><input type="radio" id="'+data.title+'star5" name="rating" value="5" /><label class="full" for="'+data.title+'star5" title="Awesome - 5 stars"></label> <input type="radio" id="'+data.title+'star4half" name="rating" value="4 and a half" /><label class="half" for="'+data.title+'star4half" title="Pretty good - 4.5 stars"></label> <input type="radio" id="'+data.title+'star4" name="rating" value="4" /><label class="full" for="'+data.title+'star4" title="Pretty good - 4 stars"></label> <input type="radio" id="'+data.title+'star3half" name="rating" value="3 and a half" /><label class="half" for="'+data.title+'star3half" title="Meh - 3.5 stars"></label> <input type="radio" id="'+data.title+'star3" name="rating" value="3" /><label class="full" for="'+data.title+'star3" title="Meh - 3 stars"></label> <input type="radio" id="'+data.title+'star2half" name="rating" value="2 and a half" /><label class="half" for="'+data.title+'star2half" title="Kinda bad - 2.5 stars"></label> <input type="radio" id="'+data.title+'star2" name="rating" value="2" /><label class="full" for="'+data.title+'star2" title="Kinda bad - 2 stars"></label> <input type="radio" id="'+data.title+'star1half" name="rating" value="1 and a half" /><label class="half" for="'+data.title+'star1half" title="Meh - 1.5 stars"></label> <input type="radio" id="'+data.title+'star1" name="rating" value="1" /><label class="full" for="'+data.title+'star1" title="Sucks big time - 1 star"></label> <input type="radio" id="'+data.title+'starhalf" name="rating" value="half" /><label class="half" for="'+data.title+'starhalf" title="Sucks big time - 0.5 stars"></label>'
     
     const imgMovie = cE("img");
     if (data.poster_path) {
@@ -27,7 +29,7 @@ const newCard = (data) => {
         );
     }
     const textD = cE("h3");
-    textD.innerHTML = data.title ;
+    textD.innerHTML = data.title + ' - ' + data.vote_average ;
     imgMovie.setAttribute("alt", data.title);
 
     const button = cE("button");
@@ -76,7 +78,9 @@ const newCard = (data) => {
         modalTextD.innerHTML = data.title ;
         
         const modalRating = cE('fieldset');
-        modalRating.innerHTML = '<fieldset class="rating"> <input type="radio" id="star5" name="rating" value="5" /><label class="full" for="star5" title="Awesome - 5 stars"></label> <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label> <input type="radio" id="star4" name="rating" value="4" /><label class="full" for="star4" title="Pretty good - 4 stars"></label> <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label> <input type="radio" id="star3" name="rating" value="3" /><label class="full" for="star3" title="Meh - 3 stars"></label> <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label> <input type="radio" id="star2" name="rating" value="2" /><label class="full" for="star2" title="Kinda bad - 2 stars"></label> <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label> <input type="radio" id="star1" name="rating" value="1" /><label class="full" for="star1" title="Sucks big time - 1 star"></label> <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label></fieldset>'
+        modalRating.className = "rating";
+        
+        modalRating.innerHTML = '<input type="radio" id="'+data.title+'star10" name="rating" value="10" /><label class="full" for="'+data.title+'star10" title="Awesome - 10 stars"></label><input type="radio" id="'+data.title+'star9" name="rating" value="9" /><label class="full" for="'+data.title+'star9" title="Awesome - 9 stars"></label><input type="radio" id="'+data.title+'star8" name="rating" value="8" /><label class="full" for="'+data.title+'star8" title="Awesome - 8 stars"></label><input type="radio" id="'+data.title+'star7" name="rating" value="7" /><label class="full" for="'+data.title+'star7" title="Awesome - 7 stars"></label><input type="radio" id="'+data.title+'star6" name="rating" value="6" /><label class="full" for="'+data.title+'star6" title="Awesome - 6 stars"></label><input type="radio" id="'+data.title+'star5" name="rating" value="5" /><label class="full" for="'+data.title+'star5" title="Awesome - 5 stars"></label> <input type="radio" id="'+data.title+'star4half" name="rating" value="4 and a half" /><label class="half" for="'+data.title+'star4half" title="Pretty good - 4.5 stars"></label> <input type="radio" id="'+data.title+'star4" name="rating" value="4" /><label class="full" for="'+data.title+'star4" title="Pretty good - 4 stars"></label> <input type="radio" id="'+data.title+'star3half" name="rating" value="3 and a half" /><label class="half" for="'+data.title+'star3half" title="Meh - 3.5 stars"></label> <input type="radio" id="'+data.title+'star3" name="rating" value="3" /><label class="full" for="'+data.title+'star3" title="Meh - 3 stars"></label> <input type="radio" id="'+data.title+'star2half" name="rating" value="2 and a half" /><label class="half" for="'+data.title+'star2half" title="Kinda bad - 2.5 stars"></label> <input type="radio" id="'+data.title+'star2" name="rating" value="2" /><label class="full" for="'+data.title+'star2" title="Kinda bad - 2 stars"></label> <input type="radio" id="'+data.title+'star1half" name="rating" value="1 and a half" /><label class="half" for="'+data.title+'star1half" title="Meh - 1.5 stars"></label> <input type="radio" id="'+data.title+'star1" name="rating" value="1" /><label class="full" for="'+data.title+'star1" title="Sucks big time - 1 star"></label> <input type="radio" id="'+data.title+'starhalf" name="rating" value="half" /><label class="half" for="'+data.title+'starhalf" title="Sucks big time - 0.5 stars"></label>'
         
         
 
@@ -94,7 +98,7 @@ const newCard = (data) => {
 
 
 const HG = (data) => {
-    
+    console.log(data)
     const body = qS('body');
     const contMovie = cE("div");
     contMovie.setAttribute("id", data.id + '_loop');
@@ -129,7 +133,27 @@ const HG = (data) => {
     
 };
 
+function addHours(date) {
+    date.setHours(date.getHours() + 1);
+    return date;
+}
+  
 
+function checkACookieExists() {
+    let session = '';
+    if(document.cookie.split(";").some((item) => item.trim().startsWith("request_token="))) {
+        session = true
+    } else {
+        session = false
+    }
+    console.log(session)
+    return session;
+}
+  
+const SETCOOKIES = (data) => {
+    const date = new Date(data.expires_at);
+    const newDate = addHours(date);
+    document.cookie = `request_token=${data.request_token}; expires=${newDate};`
+}
 
-
-export { qS, qSA, cE, newCard, HG };
+export { qS, qSA, cE, newCard, HG, SETCOOKIES, checkACookieExists };
