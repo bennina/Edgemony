@@ -124,11 +124,11 @@ body {
 }
 
 .movies:hover .cat-info {
-  display: block;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  margin-top: 25%;
+    display: block;
+    position: relative;
+    top: 0;
+    width: 100%;
+    margin-top: -100%;
 }
 
 .btn {
@@ -199,4 +199,11 @@ svg.octicon-heart {
   -ms-flex-wrap: wrap;
   width: 100%;
   overflow-y: overlay;
+  
+}
+
+.highlights {
+  overflow-x: overlay;
+  height: 50vh;
+  
 }

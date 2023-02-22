@@ -5,13 +5,11 @@ const ys = qS("#year-section .loop-movies");
 const divMovies = qS("#most-popular-section .loop-movies");
 const popular = qS("#most-popular .loop-movies");
 
-const i = 0;
+// FILM IN EVIDENZA 
 Promise.all([GET("movie", "upcoming")]).then((data) => {
-    
-    
-    
-    data[0].results.map((movie) => {  highlights.append(HG(movie)); console.log(movie) });
+    data[0].results.map((movie) => {  highlights.append(HG(movie));});
 });
+
 
 Promise.all([GET("movie", "popular")]).then((data) => {
     data[0].results.map((movie) => ys.append(newCard(movie)));

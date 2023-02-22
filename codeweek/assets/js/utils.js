@@ -71,17 +71,23 @@ const newCard = (data) => {
         const desc = cE("p");
         desc.innerHTML = data.overview ;
 
-        col.append(textD, rating, desc);
 
+        const modalTextD = cE("h3");
+        modalTextD.innerHTML = data.title ;
+        
+        const modalRating = cE('fieldset');
+        modalRating.innerHTML = '<fieldset class="rating"> <input type="radio" id="star5" name="rating" value="5" /><label class="full" for="star5" title="Awesome - 5 stars"></label> <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label> <input type="radio" id="star4" name="rating" value="4" /><label class="full" for="star4" title="Pretty good - 4 stars"></label> <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label> <input type="radio" id="star3" name="rating" value="3" /><label class="full" for="star3" title="Meh - 3 stars"></label> <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label> <input type="radio" id="star2" name="rating" value="2" /><label class="full" for="star2" title="Kinda bad - 2 stars"></label> <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label> <input type="radio" id="star1" name="rating" value="1" /><label class="full" for="star1" title="Sucks big time - 1 star"></label> <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label></fieldset>'
+        
+        
+
+        col.append(modalTextD, modalRating, desc);
         row.append(colImg, col);
         modal.append(close, row);
         body.append(modal);
-
         close.addEventListener("click", () => {
             modal.remove();
         });
     });
-
     return contMovie;
 };
 
@@ -100,8 +106,6 @@ const HG = (data) => {
     const cardDescription = cE("div");
     cardDescription.className = "cat-info";
 
-    const rating = cE('fieldset');
-    rating.innerHTML = '<fieldset class="rating"> <input type="radio" id="star5" name="rating" value="5" /><label class="full" for="star5" title="Awesome - 5 stars"></label> <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label> <input type="radio" id="star4" name="rating" value="4" /><label class="full" for="star4" title="Pretty good - 4 stars"></label> <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label> <input type="radio" id="star3" name="rating" value="3" /><label class="full" for="star3" title="Meh - 3 stars"></label> <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label> <input type="radio" id="star2" name="rating" value="2" /><label class="full" for="star2" title="Kinda bad - 2 stars"></label> <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label> <input type="radio" id="star1" name="rating" value="1" /><label class="full" for="star1" title="Sucks big time - 1 star"></label> <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label></fieldset>'
     
     const imgMovie = cE("img");
     if (data.poster_path) {
@@ -110,17 +114,22 @@ const HG = (data) => {
             "src",
             `https://image.tmdb.org/t/p/w500/${data.poster_path}`
         );
+        imgMovie.setAttribute("alt", data.title);
     }
+    
     const textD = cE("h3");
     textD.innerHTML = data.title ;
-    imgMovie.setAttribute("alt", data.title);
+    
 
-    cardDescription.append(textD, rating);
+    cardDescription.append(textD);
     cardMovie.append(imgMovie, cardDescription);
     contMovie.appendChild(cardMovie);
 
     return contMovie;
     
 };
+
+
+
 
 export { qS, qSA, cE, newCard, HG };
