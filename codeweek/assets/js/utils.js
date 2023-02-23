@@ -208,4 +208,13 @@ const SETCOOKIES = (data) => {
   document.cookie = `request_token=${data.request_token}; expires=${newDate};`;
 };
 
-export { qS, qSA, cE, newCard, HG, SETCOOKIES };
+const API_KEY = "471790fc56c9e56a0de0d32e185c4cb4";
+const requestToken = async () => {
+    const res = await fetch(`https://api.themoviedb.org/3/authentication/token/new?api_key=${API_KEY}`);
+    const data = await res.json();
+    const token = data.request_token;
+  return token;
+};
+
+
+export { qS, qSA, cE, newCard, HG, SETCOOKIES, requestToken };

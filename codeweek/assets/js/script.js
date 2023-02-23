@@ -1,4 +1,4 @@
-import { GET, USER } from "./api.js";
+import { GET, USER, session_id } from "./api.js";
 import { qS, qSA, newCard, HG, SETCOOKIES } from "./utils.js";
 const highlights = qS(".highlights");
 const ys = qS("#year-section .loop-movies");
@@ -43,9 +43,10 @@ function checkACookieExists() {
         .some((item) => item.trim().startsWith("request_token="))
     ) {
         session = true;
-        Promise.all([GET("tv", "top_rated")]).then((data) => {
-            data[0].results.map((movie) => myList.append(newCard(movie, 'col-2')));
+        Promise.all([session_id()]).then((data) => {
+            console.log(data)
         });
+        
     } else {
         session = false;
         myListRow.innerHTML = `
@@ -61,7 +62,7 @@ function checkACookieExists() {
             </div>
         `;
     }
-    console.log(session);
+    
     return session;
 }
   
