@@ -16,9 +16,57 @@ const newCard = (data) => {
     cardDescription.className = "cat-info";
 
     const rating = cE('fieldset');
+    rating.setAttribute("id", data.id + 'fieldset');
+    rating.disabled = true;
     rating.className = "rating";
+
+    //rating.innerHTML += `<input type="radio" id="id_${data.id}star9" name="rating" value="9" /><label class="full" for="id_${data.id}star9" title="9 stars"></label><input type="radio" id="id_${data.id}star8" name="rating" value="8" checked/><label class="full" for="id_${data.id}star8" title="8 stars"></label><input type="radio" id="id_${data.id}star7" name="rating" value="7" /><label class="full" for="id_${data.id}star7" title="7 stars"></label><input type="radio" id="id_${data.id}star6" name="rating" value="6" /><label class="full" for="id_${data.id}star6" title="6 stars"></label><input type="radio" id="id_${data.id}star5" name="rating" value="5" /><label class="full" for="id_${data.id}star5" title="5 stars"></label>  <input type="radio" id="id_${data.id}star4" name="rating" value="4" /><label class="full" for="id_${data.id}star4" title="Pretty good - 4 stars"></label>  <input type="radio" id="id_${data.id}star3" name="rating" value="3" /><label class="full" for="id_${data.id}star3" title="Meh - 3 stars"></label>  <input type="radio" id="id_${data.id}star2" name="rating" value="2" /><label class="full" for="id_${data.id}star2" title="Kinda bad - 2 stars"></label>  <input type="radio" id="id_${data.id}star1" name="rating" value="1" /><label class="full" for="id_${data.id}star1" title="1 star"></label> `
+   
+    const numbers = parseInt(data.vote_average);
     
-    rating.innerHTML = '<input type="radio" id="'+data.title+'star10" name="rating" value="10"/><label class="full" for="'+data.title+'star10" title="Awesome - 10 stars"></label><input type="radio" id="'+data.title+'star9" name="rating" value="9" /><label class="full" for="'+data.title+'star9" title="Awesome - 9 stars"></label><input type="radio" id="'+data.title+'star8" name="rating" value="8" /><label class="full" for="'+data.title+'star8" title="Awesome - 8 stars"></label><input type="radio" id="'+data.title+'star7" name="rating" value="7" /><label class="full" for="'+data.title+'star7" title="Awesome - 7 stars"></label><input type="radio" id="'+data.title+'star6" name="rating" value="6" /><label class="full" for="'+data.title+'star6" title="Awesome - 6 stars"></label><input type="radio" id="'+data.title+'star5" name="rating" value="5" /><label class="full" for="'+data.title+'star5" title="Awesome - 5 stars"></label> <input type="radio" id="'+data.title+'star4half" name="rating" value="4 and a half" /><label class="half" for="'+data.title+'star4half" title="Pretty good - 4.5 stars"></label> <input type="radio" id="'+data.title+'star4" name="rating" value="4" /><label class="full" for="'+data.title+'star4" title="Pretty good - 4 stars"></label> <input type="radio" id="'+data.title+'star3half" name="rating" value="3 and a half" /><label class="half" for="'+data.title+'star3half" title="Meh - 3.5 stars"></label> <input type="radio" id="'+data.title+'star3" name="rating" value="3" /><label class="full" for="'+data.title+'star3" title="Meh - 3 stars"></label> <input type="radio" id="'+data.title+'star2half" name="rating" value="2 and a half" /><label class="half" for="'+data.title+'star2half" title="Kinda bad - 2.5 stars"></label> <input type="radio" id="'+data.title+'star2" name="rating" value="2" /><label class="full" for="'+data.title+'star2" title="Kinda bad - 2 stars"></label> <input type="radio" id="'+data.title+'star1half" name="rating" value="1 and a half" /><label class="half" for="'+data.title+'star1half" title="Meh - 1.5 stars"></label> <input type="radio" id="'+data.title+'star1" name="rating" value="1" /><label class="full" for="'+data.title+'star1" title="Sucks big time - 1 star"></label> <input type="radio" id="'+data.title+'starhalf" name="rating" value="half" /><label class="half" for="'+data.title+'starhalf" title="Sucks big time - 0.5 stars"></label>'
+    if(numbers >= 10){
+        rating.innerHTML += `<input type="radio" id="id_${data.id}star10" name="rating" value="10" checked/><label class="full" for="id_${data.id}star10" title="10 stars"></label>`
+    } 
+
+    if(numbers >= 9){
+        rating.innerHTML += `<input type="radio" id="id_${data.id}star9" name="rating"  value="9" checked/><label class="full" for="id_${data.id}star9" title="9 stars"></label>`
+    } 
+
+    if(numbers >= 8){
+        rating.innerHTML += `<input type="radio" id="id_${data.id}star8" name="rating"  value="8" checked/><label class="full" for="id_${data.id}star8" title="8 stars"></label>`
+    } 
+
+    if(numbers >= 7){
+        rating.innerHTML += `<input type="radio" id="id_${data.id}star7" name="rating"  value="7" checked/><label class="full" for="id_${data.id}star7" title="7 stars"></label>`
+    } 
+
+
+    if(numbers >= 6){
+        rating.innerHTML += `<input type="radio" id="id_${data.id}star6" name="rating"  value="6" checked/><label class="full" for="id_${data.id}star6" title="6 stars"></label>`
+    } 
+
+    if(numbers >= 5){
+        rating.innerHTML += `<input type="radio" id="id_${data.id}star5" name="rating"  value="5" checked/><label class="full" for="id_${data.id}star5" title="5 stars"></label>`
+    } 
+    
+
+    if(numbers >= 4){
+        rating.innerHTML += `<input type="radio" id="id_${data.id}star4" name="rating"  value="4" checked/><label class="full" for="id_${data.id}star4" title="4 stars"></label>`
+    } 
+    
+    if(numbers >= 3){
+        rating.innerHTML += `<input type="radio" id="id_${data.id}star3" name="rating"  value="3" checked/><label class="full" for="id_${data.id}star3" title="3 stars"></label>`
+    } 
+
+    if(numbers >= 2){
+        rating.innerHTML += `<input type="radio" id="id_${data.id}star2" name="rating"  value="2" checked/><label class="full" for="id_${data.id}star2" title="2 stars"></label>`
+    } 
+
+    if(numbers >= 1){
+        rating.innerHTML += `<input type="radio" id="id_${data.id}star1" name="rating"  value="1" checked/><label class="full" for="id_${data.id}star1" title="1 stars"></label>`
+    } 
+
+    console.log(numbers)
     
     const imgMovie = cE("img");
     if (data.poster_path) {
@@ -80,7 +128,7 @@ const newCard = (data) => {
         const modalRating = cE('fieldset');
         modalRating.className = "rating";
         
-        modalRating.innerHTML = '<input type="radio" id="'+data.title+'star10" name="rating" value="10" /><label class="full" for="'+data.title+'star10" title="Awesome - 10 stars"></label><input type="radio" id="'+data.title+'star9" name="rating" value="9" /><label class="full" for="'+data.title+'star9" title="Awesome - 9 stars"></label><input type="radio" id="'+data.title+'star8" name="rating" value="8" /><label class="full" for="'+data.title+'star8" title="Awesome - 8 stars"></label><input type="radio" id="'+data.title+'star7" name="rating" value="7" /><label class="full" for="'+data.title+'star7" title="Awesome - 7 stars"></label><input type="radio" id="'+data.title+'star6" name="rating" value="6" /><label class="full" for="'+data.title+'star6" title="Awesome - 6 stars"></label><input type="radio" id="'+data.title+'star5" name="rating" value="5" /><label class="full" for="'+data.title+'star5" title="Awesome - 5 stars"></label> <input type="radio" id="'+data.title+'star4half" name="rating" value="4 and a half" /><label class="half" for="'+data.title+'star4half" title="Pretty good - 4.5 stars"></label> <input type="radio" id="'+data.title+'star4" name="rating" value="4" /><label class="full" for="'+data.title+'star4" title="Pretty good - 4 stars"></label> <input type="radio" id="'+data.title+'star3half" name="rating" value="3 and a half" /><label class="half" for="'+data.title+'star3half" title="Meh - 3.5 stars"></label> <input type="radio" id="'+data.title+'star3" name="rating" value="3" /><label class="full" for="'+data.title+'star3" title="Meh - 3 stars"></label> <input type="radio" id="'+data.title+'star2half" name="rating" value="2 and a half" /><label class="half" for="'+data.title+'star2half" title="Kinda bad - 2.5 stars"></label> <input type="radio" id="'+data.title+'star2" name="rating" value="2" /><label class="full" for="'+data.title+'star2" title="Kinda bad - 2 stars"></label> <input type="radio" id="'+data.title+'star1half" name="rating" value="1 and a half" /><label class="half" for="'+data.title+'star1half" title="Meh - 1.5 stars"></label> <input type="radio" id="'+data.title+'star1" name="rating" value="1" /><label class="full" for="'+data.title+'star1" title="Sucks big time - 1 star"></label> <input type="radio" id="'+data.title+'starhalf" name="rating" value="half" /><label class="half" for="'+data.title+'starhalf" title="Sucks big time - 0.5 stars"></label>'
+        modalRating.innerHTML = '<input type="radio" id="id_'+data.id+'star10" name="rating" value="10" /><label class="full" for="id_'+data.id+'star10" title="10 stars"></label><input type="radio" id="id_'+data.id+'star9" name="rating" value="9" /><label class="full" for="id_'+data.id+'star9" title="9 stars"></label><input type="radio" id="id_'+data.id+'star8" name="rating" value="8" /><label class="full" for="id_'+data.id+'star8" title="8 stars"></label><input type="radio" id="id_'+data.id+'star7" name="rating" value="7" /><label class="full" for="id_'+data.id+'star7" title="7 stars"></label><input type="radio" id="id_'+data.id+'star6" name="rating" value="6" /><label class="full" for="id_'+data.id+'star6" title="6 stars"></label><input type="radio" id="id_'+data.id+'star5" name="rating" value="5" /><label class="full" for="id_'+data.id+'star5" title="5 stars"></label> <input type="radio" id="id_'+data.id+'star4half" name="rating" value="4 and a half" /><label class="half" for="id_'+data.id+'star4half" title="Pretty good - 4.5 stars"></label> <input type="radio" id="id_'+data.id+'star4" name="rating" value="4" /><label class="full" for="id_'+data.id+'star4" title="Pretty good - 4 stars"></label> <input type="radio" id="id_'+data.id+'star3half" name="rating" value="3 and a half" /><label class="half" for="id_'+data.id+'star3half" title="Meh - 3.5 stars"></label> <input type="radio" id="id_'+data.id+'star3" name="rating" value="3" /><label class="full" for="id_'+data.id+'star3" title="Meh - 3 stars"></label> <input type="radio" id="id_'+data.id+'star2half" name="rating" value="2 and a half" /><label class="half" for="id_'+data.id+'star2half" title="Kinda bad - 2.5 stars"></label> <input type="radio" id="id_'+data.id+'star2" name="rating" value="2" /><label class="full" for="id_'+data.id+'star2" title="Kinda bad - 2 stars"></label> <input type="radio" id="id_'+data.id+'star1half" name="rating" value="1 and a half" /><label class="half" for="id_'+data.id+'star1half" title="Meh - 1.5 stars"></label> <input type="radio" id="id_'+data.id+'star1" name="rating" value="1" /><label class="full" for="id_'+data.id+'star1" title="Sucks big time - 1 star"></label> <input type="radio" id="id_'+data.id+'starhalf" name="rating" value="half" /><label class="half" for="id_'+data.id+'starhalf" title="Sucks big time - 0.5 stars"></label>'
         
         
 

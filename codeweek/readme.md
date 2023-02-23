@@ -20,6 +20,7 @@ Potremmo chiamarla “Best of ‘90 and ‘00”?
 dettagli del film?
 - Possiamo trovare un modo di stampare il vote_average per ogni movie attraverso la
 stampa di “n” stelle? Esempio: https://codepen.io/FredGenkin/pen/eaXYGV
+
 - Potremmo creare una sezione “My List” dove è possibile aggiungere i preferiti
 dell’utente. L’utente deve essere autenticato per potere popolare la propria lista.
    
