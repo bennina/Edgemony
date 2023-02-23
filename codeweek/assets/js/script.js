@@ -6,7 +6,11 @@ const divMovies = qS("#most-popular-section .loop-movies");
 const popular = qS("#most-popular .loop-movies");
 const myList = qS("#myList .loop-movies");
 const myListRow = qS("#myList");
+
 const tvShow = qS("#tvShow902000 .loop-movies");
+
+const login = document.getElementById("login");
+
 // FILM IN EVIDENZA 
 Promise.all([GET("movie", "upcoming")]).then((data) => {
     data[0].results.map((movie) => {  highlights.append(HG(movie));});
@@ -30,6 +34,7 @@ Promise.all([GET("tv", "top_rated")]).then((data) => {
 
 
 checkACookieExists()
+
 function checkACookieExists() {
     let session = "";
     if (
@@ -57,12 +62,3 @@ function checkACookieExists() {
     return session;
 }
   
-/*
-const username = '';
-const password = '';
-
-Promise.all([USER("authentication", username, password)]).then((data) => {
-    data.map((request) => SETCOOKIES(request));
-});
-
-*/

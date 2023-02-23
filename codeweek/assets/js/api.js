@@ -10,7 +10,7 @@ const GET = async (type = "movie", resource = "550") => {
 
 
 const USER = async (type = "movie", username, password) => {
-  if (username === '' && password === '') {
+  if (username === 'username' && password === 'password') {
     const res = await fetch(`https://api.themoviedb.org/3/authentication/token/new?api_key=${API_KEY}`);
     const data = await res.json();
     return data;

@@ -25,6 +25,10 @@ dettagli del film?
 - Possiamo trovare un modo di stampare il vote_average per ogni movie attraverso la
 stampa di “n” stelle? Esempio: https://codepen.io/FredGenkin/pen/eaXYGV
 >Fatto
+
 - Potremmo creare una sezione “My List” dove è possibile aggiungere i preferiti
 dell’utente. L’utente deve essere autenticato per potere popolare la propria lista.
-   
+   > Fatto
+   >> ai fini dell'esercizio imposteremo una password semplice. 
+   >> ovviamente occorrerebbe andare a verificare l'accesso a themoviedb visto che tornano un api con un token ho fatto i controlli lato JS.
+   >>> username === 'username' && password === 'password'
