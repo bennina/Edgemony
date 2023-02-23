@@ -348,3 +348,24 @@
   [hidden] {
     display: none;
   }
+
+  .aligne-center{
+    align-items: center;
+  }
+
+  .text-right{
+    text-align: right;
+  }
+
+  .text-center{
+    text-align: center;
+  }
+
+  .text-left{
+    text-align: left;
+  }
+
+  .bg-dark{
+    background-color: #000;
+    color: #fff;
+  }

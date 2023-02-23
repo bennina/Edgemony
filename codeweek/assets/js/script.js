@@ -11,18 +11,23 @@ Promise.all([GET("movie", "upcoming")]).then((data) => {
     data[0].results.map((movie) => {  highlights.append(HG(movie));});
 });
 
-
 Promise.all([GET("movie", "popular")]).then((data) => {
-    data[0].results.map((movie) => ys.append(newCard(movie)));
+    data[0].results.map((movie) => ys.append(newCard(movie, 'col-2')));
+});
+
+Promise.all([GET("movie", "top_rated")]).then((data) => {
+    data[0].results.map((movie) => popular.append(newCard(movie, 'col-2')));
 });
 
 Promise.all([GET("tv", "popular")]).then((data) => {
-    data[0].results.map((movie) => divMovies.append(newCard(movie)));
+    data[0].results.map((movie) => divMovies.append(newCard(movie, 'col-4')));
 });
 
 Promise.all([GET("tv", "top_rated")]).then((data) => {
-    data[0].results.map((movie) => popular.append(newCard(movie)));
+    data[0].results.map((movie) => tvShow.append(newCard(movie, 'col-2')));
 });
+
+
 checkACookieExists()
 const username = '';
 const password = '';

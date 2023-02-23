@@ -119,8 +119,15 @@ body {
 .movies {
   text-align: center;
 }
+.btn:hover,
+.movies:hover{
+  cursor: pointer;
+}
 .movies:hover img {
   filter: brightness(0.3);
+}
+.cat-info p{
+  color: #fff;
 }
 .cat-info h3 {
   color: #fff;
@@ -130,7 +137,10 @@ body {
   display: none;
   padding-bottom: 25px;
 }
-
+.movies .cat-info .row{
+  align-items: center;
+  justify-content: center;
+}
 .movies:hover .cat-info {
     display: block;
     position: relative;
