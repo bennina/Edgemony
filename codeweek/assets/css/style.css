@@ -163,12 +163,19 @@ body {
   color: #fff;
   border-radius: 35px;
 }
-
+.btn-secondary{
+  background-color: #f2b807;
+  color: #fff;
+  border-radius: 35px;
+}
 h2 {
   color: #f2b807;
   font-weight: 300;
 }
-
+h3{
+  color: #fff;
+  font-weight: 300;
+}
 .btn-icon {
   padding: 10px 10px;
   background: #f2b807;
@@ -224,4 +231,13 @@ svg.octicon-heart {
   overflow-x: overlay;
   height: 50vh;
   
+}
+
+
+.pb-5{
+  padding-bottom: 5em;
+}
+
+.p-5{
+  padding: 5em;
 }

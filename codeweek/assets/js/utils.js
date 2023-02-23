@@ -165,7 +165,6 @@ const newCard = (data, colsize) => {
 };
 
 const HG = (data) => {
-  console.log(data);
   const body = qS("body");
   const contMovie = cE("div");
   contMovie.setAttribute("id", data.id + "_loop");
@@ -201,20 +200,7 @@ function addHours(date) {
   return date;
 }
 
-function checkACookieExists() {
-  let session = "";
-  if (
-    document.cookie
-      .split(";")
-      .some((item) => item.trim().startsWith("request_token="))
-  ) {
-    session = true;
-  } else {
-    session = false;
-  }
-  console.log(session);
-  return session;
-}
+
 
 const SETCOOKIES = (data) => {
   const date = new Date(data.expires_at);
@@ -222,4 +208,4 @@ const SETCOOKIES = (data) => {
   document.cookie = `request_token=${data.request_token}; expires=${newDate};`;
 };
 
-export { qS, qSA, cE, newCard, HG, SETCOOKIES, checkACookieExists };
+export { qS, qSA, cE, newCard, HG, SETCOOKIES };

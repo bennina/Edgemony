@@ -369,3 +369,18 @@
     background-color: #000;
     color: #fff;
   }
+
+  .card {
+    background-color: #f28b0b;
+    box-shadow: 1px 0px 10px rgb(178 178 178 / 50%);
+    margin: 2em;
+    padding: 7em;
+    border-radius: 20px;
+}
+
+  .card h2,
+  .card h3,
+  .card p{
+    color: #fff;
+    font-weight: lighter;
+  }

@@ -16,7 +16,6 @@ const USER = async (type = "movie", username, password) => {
     return data;
   } else {
     const data = 'Non sei autorizzato!'
-    console.log(data);
     return data;
   }
 };

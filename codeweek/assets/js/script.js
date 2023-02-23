@@ -1,10 +1,11 @@
 import { GET, USER } from "./api.js";
-import { qS, qSA, newCard, HG, SETCOOKIES, checkACookieExists } from "./utils.js";
+import { qS, qSA, newCard, HG, SETCOOKIES } from "./utils.js";
 const highlights = qS(".highlights");
 const ys = qS("#year-section .loop-movies");
 const divMovies = qS("#most-popular-section .loop-movies");
 const popular = qS("#most-popular .loop-movies");
 const myList = qS("#myList .loop-movies");
+const myListRow = qS("#myList");
 const tvShow = qS("#tvShow902000 .loop-movies");
 // FILM IN EVIDENZA 
 Promise.all([GET("movie", "upcoming")]).then((data) => {
@@ -29,11 +30,39 @@ Promise.all([GET("tv", "top_rated")]).then((data) => {
 
 
 checkACookieExists()
+function checkACookieExists() {
+    let session = "";
+    if (
+      document.cookie
+        .split(";")
+        .some((item) => item.trim().startsWith("request_token="))
+    ) {
+      session = true;
+    } else {
+        session = false;
+        myListRow.innerHTML = `
+        <div class="row aligne-center p-5">
+                <div class="col col-9">
+                    <h3>Devi essere Loggato per vedere la sezione</h3>
+                </div>
+                <div class="col col-3 text-right">
+                    <a href="./login.html" class="btn btn-primary">
+                        Accedi
+                    </a>
+                </div>
+            </div>
+        `;
+    }
+    console.log(session);
+    return session;
+}
+  
+/*
 const username = '';
 const password = '';
 
 Promise.all([USER("authentication", username, password)]).then((data) => {
-    //set cookie token
     data.map((request) => SETCOOKIES(request));
 });
 
+*/
