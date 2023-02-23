@@ -42,7 +42,10 @@ function checkACookieExists() {
         .split(";")
         .some((item) => item.trim().startsWith("request_token="))
     ) {
-      session = true;
+        session = true;
+        Promise.all([GET("tv", "top_rated")]).then((data) => {
+            data[0].results.map((movie) => myList.append(newCard(movie, 'col-2')));
+        });
     } else {
         session = false;
         myListRow.innerHTML = `

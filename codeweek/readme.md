@@ -13,12 +13,12 @@
 
 ###### Richieste importanti da parte del nostro cliente:
 - Dobbiamo creare una web app simile a Prime Video ma dal design rinnovato e accattivante, adatto ad una fascia di età compresa tra i 18 e i 40 anni.
-
+>Fatto
 - Vogliamo dare maggiore risalto alle serie più famose degli ultimi 10 anni.
-
+> FARE I FILTRI
 - Sarebbe possibile avere una sezione separata anche per le serie TV anni ‘90 e ‘00?
 Potremmo chiamarla “Best of ‘90 and ‘00”?
-
+> FARE I FILTRI
 - Sarebbe possibile per ogni card “Movie” avere al click l’apertura di una modal con i
 dettagli del film?
 >Fatto
@@ -27,7 +27,9 @@ stampa di “n” stelle? Esempio: https://codepen.io/FredGenkin/pen/eaXYGV
 >Fatto
 
 - Potremmo creare una sezione “My List” dove è possibile aggiungere i preferiti
-dell’utente. L’utente deve essere autenticato per potere popolare la propria lista.
+dell’utente. 
+> RICHIAMARE L'API CORRETTA
+   - L’utente deve essere autenticato per potere popolare la propria lista.
    > Fatto
    >> ai fini dell'esercizio imposteremo una password semplice. 
    >> ovviamente occorrerebbe andare a verificare l'accesso a themoviedb visto che tornano un api con un token ho fatto i controlli lato JS.
