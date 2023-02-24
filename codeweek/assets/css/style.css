@@ -241,3 +241,24 @@ svg.octicon-heart {
 .p-5{
   padding: 5em;
 }
+
+
+
+.success {
+    width:calc( 90% - 20px );
+    background: #f28b0b;
+    padding: 20px 30px 10px;
+    color: #fff;
+    margin: 0 auto;
+}
+
+.success .close {
+  text-align: right;
+  position: relative;
+  margin-bottom: -35px;
+}
+
+.notFound{
+  color: #f28b0b;
+  margin-bottom: 10em;
+}
