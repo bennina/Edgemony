@@ -46,3 +46,8 @@
   color: white;
   position: relative;
 }
+
+.full {
+  width: 100%;
+  text-align: center;
+}

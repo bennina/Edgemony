@@ -13,7 +13,7 @@ import "./main.css";
 const Main = () => {
   return (
     <div className="Main">
-      <Masonry images={imageMasonry} />
+      
       
       {/* Questo è il componente della hero */}
       <Hero title="Negozio" />
@@ -24,6 +24,7 @@ const Main = () => {
       {/* GALLERY */}
       <Gallery title="Galleria immagini" images={imageList} />
       
+      <Masonry title="Masonry immagini"  images={imageMasonry} />
     </div>
   );
 };
