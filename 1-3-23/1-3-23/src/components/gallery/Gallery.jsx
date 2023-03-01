@@ -1,11 +1,15 @@
 import "./index.css";
 
-const Gallery = ({ images }) => {
+const Gallery = ({ images, title }) => {
   return (
     <div className="Gallery">
-      {images.map((image) => (
-        <img width="100%" height="auto" src={image.image} alt="Apple" />
-      ))}  
+      <h2> {title} </h2>
+      <div className="row">
+        {images.map((image) => (
+          <img src={image.image} alt={title} />
+        ))}
+      </div>
+        
     </div>
   );
 };

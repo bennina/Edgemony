@@ -13,7 +13,7 @@ const CardProduct = ({ productData }) => {
       style={{
         backgroundColor: `rgba(${
           12 * productData.discountPercentage
-        }, 10, 4, 0.4)`,
+        }, 150, 150, 0.4)`,
       }}
     >
       <img onClick={onImageClick} src={productData.thumbnail} alt="Apple" />

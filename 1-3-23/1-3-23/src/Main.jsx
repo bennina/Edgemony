@@ -11,13 +11,13 @@ import "./main.css";
 const Main = () => {
   return (
     <div className="Main">
-      <Gallery images={imageList}/>
+      <Gallery title="Galleria immagini" images={imageList}/>
       {/* Questo è il componente della hero */}
       <Hero title="Negozio" />
       {/* Questo è il componente che fai il conteggio dei prodotti */}
       <Control listDataLength={productsList.length} />
       {/* Loop prodotti */}
-      <ListProducts listData={productsList} />
+      <ListProducts title="I miei prodotti" listData={productsList} />
 
       
     </div>
