@@ -1,0 +1,18 @@
+export const imageMasonry = [
+  { image: ["https://picsum.photos/700/300"] },
+  { image: ["https://picsum.photos/700/300"] },
+  { image: ["https://picsum.photos/200/600"] },
+  { image: ["https://picsum.photos/800/300"] },
+  { image: ["https://picsum.photos/200/500"] },
+  { image: ["https://picsum.photos/700/300"] },
+  { image: ["https://picsum.photos/200/600"] },
+  { image: ["https://picsum.photos/800/300"] },
+  { image: ["https://picsum.photos/200/500"] },
+  { image: ["https://picsum.photos/700/300"] },
+  { image: ["https://picsum.photos/200/600"] },
+  { image: ["https://picsum.photos/800/300"] },
+  { image: ["https://picsum.photos/200/500"] },
+  { image: ["https://picsum.photos/200/600"] },
+  { image: ["https://picsum.photos/800/300"] },
+  { image: ["https://picsum.photos/200/500"] },
+];
