@@ -1,0 +1,8 @@
+.addItem {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.addItem input{
+    margin-right: 20px;
+}
