@@ -1,30 +1,33 @@
 import { useState } from "react";
-import MiniCard from "../miniCard/MiniCard";
-import ProductDetail from "../productDetail";
+import MiniCardCart from "../miniCardCart/MiniCardCart";
+
 import "./index.css";
 
-
-
 const ModalCart = ({ productData, setModalContextCart }) => {
-  
-  console.log(productData)
-  console.log(setModalContextCart)
+  console.log(productData);
+  console.log(setModalContextCart);
   const onHandleClose = () =>
     setModalContextCart((prev) => ({
       ...prev,
       isVisibile: false,
     }));
 
-
   return (
     <div className="ModalCart">
-        {productData.map((card) => (
-          <MiniCard imgSrc={card.thumbnail} imgAlt={card.title} key={card.id} />
-        ))}
+      <div className="ModalCart__content">
+        <div className="ModalCart__product">
+          {productData.map((card) => (
+            <MiniCardCart
+              imgSrc={card.thumbnail}
+              imgAlt={card.title}
+              key={card.id}
+            />
+          ))}
+        </div>
         <button onClick={onHandleClose} className="ModalCart--close">
             X
-        </button>
-        
+          </button>
+      </div>
     </div>
   );
 };
