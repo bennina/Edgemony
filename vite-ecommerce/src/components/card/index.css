@@ -1,0 +1,55 @@
+.Card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 300px;
+  height: 380px;
+  border-radius: 6px;
+  box-shadow: 0 0 4px lightgray;
+  cursor: pointer;
+  transition: transform 0.35s;
+  scroll-snap-align: end;
+}
+
+.Card:hover {
+  transform: scale(1.1);
+}
+
+.Card__image {
+  width: 300px;
+  height: 150px;
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
+  object-fit: cover;
+}
+
+.Card__text {
+  padding: 40px;
+}
+
+.Card__text--title {
+  margin: 6px 0;
+}
+
+.Card__text--desc {
+  font-size: 0.9rem;
+}
+
+.Card__text--cat {
+  display: inline;
+  padding: 6px 20px;
+  background-color: #bdd4e7;
+  background-image: linear-gradient(315deg, #bdd4e7 0%, #8693ab 74%);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 25px;
+  font-weight: bold;
+  color: #fff
+}
+
+.Card__text--price {
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: right;
+}

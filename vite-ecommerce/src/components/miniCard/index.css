@@ -1,0 +1,14 @@
+.MiniCard {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 6px;
+  cursor: pointer;
+  filter: grayscale(0.3) saturate(1) contrast(1);
+  transition: all 0.35s;
+}
+
+.MiniCard:hover {
+  transform: scale(1.1);
+  filter: grayscale(0) saturate(1.2) contrast(1.2);
+}
