@@ -1,0 +1,45 @@
+@import "../../styles/variables";
+
+.Navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 12px;
+  height: 50px;
+
+  ul {
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    list-style-type: none;
+
+    li {
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
+
+  img {
+    width: 30px;
+    height: 30px;
+  }
+
+  button {
+    width: 130px;
+    height: 30px;
+    border: 0;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    -webkit-transition: padding 300ms ease-in-out, background 300ms ease-in-out;
+    -o-transition: padding 300ms ease-in-out, background 300ms ease-in-out;
+    transition: padding 300ms ease-in-out, background 300ms ease-in-out;
+    background: $primary-color-alpha;
+    &:hover {
+      background: $active-color;
+      color: $secondary-color;
+    }
+  }
+}
