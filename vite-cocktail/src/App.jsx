@@ -16,6 +16,10 @@ function App() {
     isVisible: false,
     payload: {},
   });
+  
+  const [setMenuOpens, setMenuOpen] = useState({
+    isVisible: false,
+  });
 
   useEffect(() => {
     GET("/search.php?f=d").then(({ drinks }) => {
@@ -25,7 +29,8 @@ function App() {
 
   return (
     <div className={styles.App}>
-      <Navbar />
+      <Navbar setMenuOpens={setMenuOpens} setMenuOpen={setMenuOpen} />
+      
       {singleItemContext.isVisible ? (
         <SingleItem
           data={singleItemContext.payload}

@@ -6,8 +6,50 @@
   align-items: center;
   padding: 6px 12px;
   height: 50px;
+  .sideBar{
+    .Close{
+      font-size: 30px;
+      color: $defaul;
+    }
+    
+    ul{
+      width: 100%;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      li{
+        font-size: 30px;
+        line-height: 70px;
+        color: $defaul;
+      }
+    }
+    position: fixed;
+    width: 50%;
+    display: flex;
+    top: 0;
+    right: 0;
+    padding: 2em;
+    background: $active-color;
+    height: 100%;
+    z-index: 999;
 
-  ul {
+  }
+  .Collapse{
+    @media screen and (min-width: 991px) {
+      display: none;
+    }
+    span{
+      display: block;
+      height: 2px;
+      width: 30px;
+      margin: 6px;
+      background-color: $defaul;
+    }
+  }
+  >ul {
+    @media screen and (max-width: 990px) {
+      display: none;
+    }
     display: flex;
     gap: 20px;
     padding: 0;
