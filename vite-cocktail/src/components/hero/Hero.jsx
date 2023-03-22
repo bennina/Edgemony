@@ -1,4 +1,4 @@
-import "./index.scss";
+import styles from "./index.module.scss";
 
 const Hero = ({ setCategory }) => {
   const onHandleClick = (value) => {
@@ -6,19 +6,19 @@ const Hero = ({ setCategory }) => {
   };
 
   return (
-    <div className="Hero">
+    <div className={styles.Hero}>
       <section>
         <h1>Cocktail</h1>
       </section>
       
-      <ul className="Hero__first__list">
+      <ul className={styles.Hero__first__list}>
         <li>Alcolico</li>
         <li>Analcolico</li>
         <li>Vini</li>
         <li>Dessert</li>
       </ul>
       
-      <ul className="Hero__second__list">
+      <ul className={styles.Hero__second__list}>
         <li onClick={() => onHandleClick("Ordinary Drink")}>Ordinary Drink</li>
         <li onClick={() => onHandleClick("Cocktail")}>Cocktail</li>
         <li onClick={() => onHandleClick("Shot")}>Shot</li>

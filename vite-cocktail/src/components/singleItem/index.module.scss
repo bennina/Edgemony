@@ -28,7 +28,7 @@
     height: 100%;
     padding: 0 18px;
     color: $defaul;
-    &--lists {
+    &__lists {
       width: 100%;
     
 
@@ -49,7 +49,7 @@
       object-fit: cover;
     }
 
-    &--carousel button {
+    &__carousel button {
       padding: 22px 0;
       width: 50%;
       height: 100%;

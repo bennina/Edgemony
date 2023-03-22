@@ -1,4 +1,4 @@
-import "./index.scss";
+import styles from "./index.module.scss";
 
 const SingleItem = ({ data, setSingleItemContext }) => {
   const onHandleClick = () =>
@@ -8,16 +8,16 @@ const SingleItem = ({ data, setSingleItemContext }) => {
     }));
 
   return (
-    <div className="SingleItem">
+    <div className={styles.SingleItem}>
       
-      <div className="contentModal">
+      <div className={styles.contentModal}>
       
-        <div className="SingleItem__text">
+        <div className={styles.SingleItem__text}>
         <button onClick={onHandleClick}>X</button>
           <h1>{data.strDrink}</h1>
           <p>{data.strCategory}</p>
           <p>Container: {data.strGlass}</p>
-          <div className="SingleItem__text--lists">
+          <div className={styles.SingleItem__text__lists}>
             <ul>
               <h3>Ingredients</h3>
               <li>{data.strIngredient1}</li>
@@ -31,9 +31,9 @@ const SingleItem = ({ data, setSingleItemContext }) => {
           </div>
           
         </div>
-        <div className="SingleItem__image">
+        <div className={styles.SingleItem__image}>
           <img src={data.strDrinkThumb} alt={data.idDrink} />
-          <div className="SingleItem__image--carousel">
+          <div className={styles.SingleItem__image__carousel}>
             <button>Previous</button>
             <button>Next</button>
           </div>
