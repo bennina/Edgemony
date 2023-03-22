@@ -13,7 +13,10 @@ const SingleItem = ({ data, setSingleItemContext }) => {
       <div className={styles.contentModal}>
       
         <div className={styles.SingleItem__text}>
-        <button onClick={onHandleClick}>X</button>
+          <div className={styles.title__row}> 
+            <button onClick={onHandleClick}>X</button>
+          </div>
+        
           <h1>{data.strDrink}</h1>
           <p>{data.strCategory}</p>
           <p>Container: {data.strGlass}</p>
@@ -24,10 +27,10 @@ const SingleItem = ({ data, setSingleItemContext }) => {
               <li>{data.strIngredient2}</li>
               <li>{data.strIngredient3}</li>
             </ul>
-            <ul>
+            
               <h3>Instructions</h3>
-              <li>{data.strInstructions}</li>
-            </ul>
+              <p>{data.strInstructions}</p>
+            
           </div>
           
         </div>
