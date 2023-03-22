@@ -1,0 +1,12 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.Footer {
+    margin-top: 5em;
+    margin-bottom: 15px;
+    @include flex-container(row, center, flex-start, 50px, wrap);
+    width: calc(100% - 20em);
+    text-align: center;
+    padding: 10em;
+    background: $primary-color-alpha;
+}

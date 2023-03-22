@@ -7,6 +7,7 @@ import Content from "./components/content";
 
 import SingleItem from "./components/singleItem/SingleItem";
 import styles from "./App.module.scss";
+import Footer from "./components/footer";
 
 function App() {
   const [cocktailList, setCocktailList] = useState([]);
@@ -39,6 +40,7 @@ function App() {
           />
         </>
       )}
+      <Footer />
     </div>
   );
 }
