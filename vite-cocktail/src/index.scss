@@ -13,3 +13,22 @@ body {
   font-family: 'Montserrat', sans-serif;
   letter-spacing: 1px;
 }
+input[type="submit" i],
+button {
+  width: 130px;
+  height: 30px;
+  border: 0;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  -webkit-transition: padding 300ms ease-in-out, background 300ms ease-in-out;
+  -o-transition: padding 300ms ease-in-out, background 300ms ease-in-out;
+  transition: padding 300ms ease-in-out, background 300ms ease-in-out;
+  background: $primary-color-alpha;
+  &:hover {
+    background: $active-color;
+    color: $secondary-color;
+  }
+}

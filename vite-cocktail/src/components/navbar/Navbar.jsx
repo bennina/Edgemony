@@ -1,8 +1,8 @@
 import { useState } from "react";
 import styles from "./index.module.scss";
 
-const Navbar = () => {
-    
+const Navbar = ({ setReservationVisibility }) => {
+  const onHandleClick = () => setReservationVisibility(true);
   const [setMenuOpens, setMenuOpen] = useState({
       
       isVisible: false,
@@ -29,7 +29,7 @@ const Navbar = () => {
         <li>Contacts</li>
       </ul>
       
-      <button>prenota</button>
+      <button onClick={onHandleClick}>prenota</button>
       {setMenuOpens.isVisible ? (
       <div className={styles.sideBar} >
           

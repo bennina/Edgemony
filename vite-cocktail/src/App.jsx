@@ -4,12 +4,13 @@ import { filteredList } from "./utils/funcs";
 import Navbar from "./components/navbar";
 import Hero from "./components/hero";
 import Content from "./components/content";
-
+import Reservation from "./components/reservation/Reservation";
 import SingleItem from "./components/singleItem/SingleItem";
 import styles from "./App.module.scss";
 import Footer from "./components/footer";
 
 function App() {
+  const [reservationIsVisibile, setReservationVisibility] = useState(false);
   const [cocktailList, setCocktailList] = useState([]);
   const [category, setCategory] = useState("Cocktail");
   const [singleItemContext, setSingleItemContext] = useState({
@@ -29,7 +30,8 @@ function App() {
 
   return (
     <div className={styles.App}>
-      <Navbar setMenuOpens={setMenuOpens} setMenuOpen={setMenuOpen} />
+      
+      <Navbar setReservationVisibility={setReservationVisibility} setMenuOpens={setMenuOpens} setMenuOpen={setMenuOpen} />
       
       {singleItemContext.isVisible ? (
         <SingleItem
@@ -37,7 +39,10 @@ function App() {
           setSingleItemContext={setSingleItemContext}
         />
       ) : (
-        <>
+          <>
+            {reservationIsVisibile && (
+            <Reservation setReservationVisibility={setReservationVisibility} />
+          )}
           <Hero setCategory={setCategory} />
           <Content
             data={filteredList(cocktailList, "strCategory", category)}
