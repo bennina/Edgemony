@@ -3,28 +3,25 @@ import { Context } from "./store";
 import { initialState } from "./store/state";
 import { mainReducer } from "./store/reducers";
 import Hero from "./components/hero";
-import AddTask from "./components/addTask";
+import Modal from "./components/modal/Modal";
 import TasksList from "./components/tasksList";
 import styles from "./App.module.scss";
 
 function App() {
   const [state, dispatch] = useReducer(mainReducer, initialState);
-  
-  const onHandleClick = () => (console.log(state.isModalVisibile), state.isModalVisibile = true, console.log(state.isModalVisibile));
+
+  const onHandleAddTodoBtn = () =>
+    dispatch({ type: "SET_MODAL_VISIBILITY", payload: true });
+
   return (
     <div className={styles.App}>
       <Context.Provider value={{ state, dispatch }}>
-      
-        {state.isModalVisibile && (
-          <AddTask value={{ state, dispatch }}/>
-        )}
-       
-        
         <Hero />
         <TasksList />
-        
-        <button className={styles.addTodo} onClick={onHandleClick}>{"+"}</button>
-        
+        <button onClick={onHandleAddTodoBtn} className={styles.addTodo}>
+          {"+"}
+        </button>
+        {state.isModalVisibile && <Modal />}
       </Context.Provider>
     </div>
   );
