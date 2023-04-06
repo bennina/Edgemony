@@ -1,7 +1,7 @@
 import Layout from "@/components/layout";
 import Head from "next/head";
 import styles from "@/styles/Home.module.css";
-const About = () => {
+const Eventi = () => {
   return (
     <>
       <Head>
@@ -12,7 +12,7 @@ const About = () => {
       </Head>
       <main className={styles.main}>
         <Layout>
-        <h1>Sono la pagina About</h1>
+        <h1>Sono la pagina Eventi</h1>
         </Layout>
       </main>
     </>
@@ -20,4 +20,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Eventi;
