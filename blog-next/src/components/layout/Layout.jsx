@@ -1,8 +1,15 @@
-const Layout = ({ }) => { 
+import Header from "../header";
+import Footer from "../footer";
+
+
+const Layout = ({children}) => {
     return (
         <>
-            <h1> sono Layut </h1>
+            <Header/>
+            {children}
+            <Footer/>
         </>
     )
 }
+
 export default Layout;
