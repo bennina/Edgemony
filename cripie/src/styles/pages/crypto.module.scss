@@ -1,0 +1,220 @@
+.Main {
+  font-family: $primary-font;
+  @include poppins();
+  .popup {
+    @include flex($justify: center);
+  }
+  .header {
+    @include flex($justify: space-between, $align: baseline, $gap: 10px);
+    position: relative;
+
+    .row {
+      @include flex($direction: row, $align: center, $justify: space-between);
+      width: 100%;
+
+      .backButton {
+        @include flex($align: center, $justify: center);
+        @include poppins();
+        background-color: var(--btn-background);
+        color: var(--btn-text);
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        transition: all 0.55s;
+        height: 30px;
+        width: 30px;
+        position: absolute;
+        top: -30px;
+        left: 0;
+        &:hover {
+          box-shadow: 0 0 4px 2px $graph;
+          transition: all 0.55s;
+        }
+        .arrow {
+          width: 50%;
+          height: 100%;
+        }
+      }
+      .col {
+        width: 50%;
+        @include flex($align: center, $gap: 14px);
+        padding: 2em 0em 2em 0em;
+        align-self: flex-end;
+        @media screen and (max-width: 350px) {
+          @include flex($align: center, $justify: flex-start, $gap: 10px);
+          width: 100%;
+        }
+
+        @media screen and (min-width: 350px) and (max-width: 500px) {
+          @include flex($align: center, $justify: flex-start, $gap: 10px);
+          width: 100%;
+        }
+        h2 {
+          font-size: 18px;
+        }
+
+        .image {
+          width: 30px;
+        }
+        .star {
+          height: 25px;
+          width: 25px;
+          border-radius: 100%;
+          cursor: pointer;
+
+          &:hover {
+            color: $graph;
+            box-shadow: 0 0 10px 1px $graph;
+            transition: all 0.55s;
+          }
+        }
+
+        h2 {
+          margin-bottom: 0px;
+        }
+        &:last-child {
+          @include col($gap: 10px, $sizeMd: 70%);
+        }
+      }
+      .btn {
+        width: 50%;
+        @include flex($justify: flex-end);
+        padding: 2em 0em 2em 0em;
+        align-self: baseline;
+        // @media screen and (max-width: 350px) {
+        //   position: absolute;
+        //   left: 5px;
+        //   top: -50px;
+        // }
+        // @media screen and (min-width: 350px) and (max-width: 500px) {
+        //   position: absolute;
+        //   left: 15px;
+        //   top: -50px;
+        // }
+      }
+    }
+  }
+
+  .starActive {
+    color: $graph;
+    box-shadow: 0 0 10px 1px $graph;
+    transition: all 0.55s;
+
+    &:hover {
+      color: var(--card--background);
+    }
+  }
+
+  .chartArea {
+    height: 40vh;
+    background-color: var(--card--background);
+    box-shadow: 0px 0px 5px var(--card-border);
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 60px;
+  }
+
+  .info {
+    background-color: var(--card--background);
+    @include flex(
+      $direction: row,
+      $justify: space-between,
+      $align: baseline,
+      $gap: 15px
+    );
+    box-shadow: 0px 0px 5px var(--card-border);
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+
+    .price {
+      @include flex($direction: column, $align: center, $gap: 5px);
+
+      .priceDettails {
+        @include flex($align: center, $gap: 5px);
+
+        .negativeVar {
+          padding-left: 10px;
+          border-radius: 6px;
+          padding: 5px;
+          background-color: $red;
+        }
+        .positiveVar {
+          padding-left: 10px;
+          border-radius: 6px;
+          padding: 5px;
+          background-color: $graph;
+        }
+        .priceValue {
+          font-size: 2.2rem;
+          span {
+            font-size: 1rem;
+          }
+        }
+      }
+
+      .HLprice {
+        @include flex($align: baseline, $gap: 10px);
+        text-transform: lowercase;
+      }
+    }
+  }
+  .description {
+    padding: 10px;
+    padding-top: 30px;
+    font-size: 0.8rem;
+    text-transform: none;
+    overflow-y: scroll;
+
+    a {
+      color: $graph;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .Main {
+    .header {
+      @include flex($justify: space-between, $align: baseline, $gap: 10px);
+
+      .row {
+        @include flex(
+          $direction: column,
+          $align: center,
+          $justify: space-between
+        );
+        .col {
+          align-self: flex-start;
+        }
+
+        .btn {
+          @include flex($justify: flex-start);
+          padding: 0em 0em 2em 0em;
+        }
+      }
+    }
+
+    .info {
+      @include flex(
+        $direction: column,
+        $justify: space-between,
+        $align: baseline,
+        $gap: 15px
+      );
+
+      .price {
+        .priceDettails {
+          .priceValue {
+            font-size: 1.7rem;
+            span {
+              font-size: 0.8rem;
+            }
+          }
+        }
+        .HLprice {
+          @include flex($direction: column);
+        }
+      }
+    }
+  }
+}

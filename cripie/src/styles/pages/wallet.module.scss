@@ -1,0 +1,47 @@
+.Content {
+  padding-top: 40px;
+
+  .title {
+    color: var(--text);
+  }
+
+  .chartArea {
+    @include flex(
+      $direction: column,
+      $justify: center,
+      $align: center,
+      $gap: 15px
+    );
+    height: 60vh;
+    width: 60vw;
+    background-color: var(--card--background);
+    box-shadow: 0px 0px 5px var(--card-border);
+    letter-spacing: 0px;
+    border-radius: 20px;
+    padding-top: 20px;
+    margin-left: 7vw;
+    margin-bottom: 30px;
+    padding: 20px;
+    text-align: center;
+
+    @media screen and (max-width: 500px) {
+      margin-left: 0px;
+    }
+
+    .walletValue {
+      padding: 20px;
+      padding-top: 10px;
+      text-align: start;
+
+      @media screen and (max-width: 450px) {
+        padding-left: 20px;
+        font-size: 12px;
+      }
+    }
+  }
+  h5 {
+    color: $light;
+    text-shadow: 0px 0px 1px $light;
+    transform: translateY(60px);
+  }
+}

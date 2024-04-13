@@ -1,0 +1,71 @@
+.allCryptoHead {
+  width: 80%;
+  height: 100px;
+  position: absolute;
+  top: 81px;
+  right: 10px;
+  z-index: 1;
+  padding-left: 6%;
+  background: var(--background);
+  @media screen and (min-width: 505px) and (max-width: 990px) {
+    width: 90%;
+  }
+
+  .container {
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+    width: 80%;
+    @include flex($align: center, $justify: center, $gap: 5%);
+
+    .search {
+      border: 1px solid $graph;
+      background-color: var(--card--background);
+      box-shadow: 0 0 2px 0px var(--card-border);
+      border-radius: 14px;
+      padding: 6px 8px 6px 8px;
+      @include flex($align: center, $gap: 8px);
+      width: 70%;
+
+      input {
+        border: none;
+        outline: none;
+        color: $background-cards-dark;
+        background-color: var(--card--background);
+        color: var(--text);
+        width: 100%;
+      }
+
+      .searchIcon {
+        max-height: 20px;
+        max-width: 20px;
+        color: $graph;
+      }
+    }
+
+    @media screen and (max-width: 340px) {
+      width: 90%;
+      @include flex($align: center, $justify: flex-end, $gap: 4px);
+
+      input {
+        max-width: 100px !important;
+      }
+    }
+  }
+}
+.AllCriptoCard {
+  padding-top: 80px;
+}
+
+@media screen and (min-width: 700px) {
+  .allCryptoHead {
+    .container {
+      width: 95%;
+      @include flex($justify: space-around, $gap: 24px);
+
+      .search {
+        width: 60%;
+      }
+    }
+  }
+}

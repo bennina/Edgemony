@@ -1,0 +1,25 @@
+{
+  "name": "crypie",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "chart.js": "^4.2.1",
+    "css-module": "^1.1.4",
+    "moment": "^2.29.4",
+    "next": "^13.3.0",
+    "react": "18.2.0",
+    "react-chartjs-2": "^5.2.0",
+    "react-dom": "18.2.0",
+    "react-icons": "^4.8.0"
+  },
+  "devDependencies": {
+    "react-modules": "^1.0.8",
+    "sass": "^1.62.0"
+  }
+}

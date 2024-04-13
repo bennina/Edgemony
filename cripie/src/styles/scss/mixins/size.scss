@@ -1,0 +1,11 @@
+@mixin space-around($all: 0, $top-bot: 0, $left-right: 0) {
+  margin: $all;
+  padding: $top-bot $left-right;
+}
+
+//se height non viene specificato sarà = a width
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+

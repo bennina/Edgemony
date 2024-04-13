@@ -1,0 +1,128 @@
+.Main {
+  font-family: $primary-font;
+  @include poppins();
+  .content {
+    @include flex($justify: center, $align: center, $gap: 25px, $wrap: wrap);
+    padding: 40px 0px 40px 0px;
+    @media screen and (min-width: 1080px) {
+      padding: 40px 20px 40px 20px;
+    }
+
+    .aboutCard {
+      max-width: 300px;
+      @include flex($direction: column, $align: center);
+      background-color: var(--card--background);
+      border-radius: 15px;
+      box-shadow: $box-shadow;
+      text-align: center;
+      transition: 0.4s;
+      padding: 5px;
+
+      .myImage {
+        height: 130px;
+        width: 130px;
+        border-radius: 100%;
+        border: 1px solid $graph;
+        background-color: $background-pages;
+        box-shadow: 0 0 2px 1px $graph;
+        transform: translateY(-20px);
+
+        img {
+          height: 100%;
+          width: 100%;
+          border-radius: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .myName {
+        height: 20%;
+        // margin-bottom: 6px;
+        transform: translateY(-10px);
+      }
+
+      .info {
+        height: 50%;
+        width: 100%;
+        background-color: $box-shadow;
+        font-size: 10px;
+        margin-bottom: 10px;
+
+        p {
+          text-transform: initial;
+          font-weight: 300;
+        }
+      }
+
+      .contacts {
+        height: 30%;
+        width: 100%;
+        padding: 0px 5px 0px 5px;
+        @include flex($justify: center, $align: center);
+        ul {
+          width: 100%;
+          @include flex($justify: center, $align: center, $gap: 20px);
+          list-style: none;
+          padding: 0px 5px 0px 5px;
+          @media screen and (max-width: 1080px) {
+            font-size: 10px;
+          }
+
+          li {
+            @include flex($direction: column, $align: center);
+          }
+
+          a {
+            display: inline-block;
+            text-decoration: none;
+            color: $graph;
+            transition: 0.3s;
+            margin-bottom: 6px;
+
+            &:hover {
+              filter: brightness(1.2);
+              text-shadow: 0px 0px 1px $second-color;
+              transform: scale(1.1);
+            }
+
+            &:active {
+              filter: brightness(1.2);
+              text-shadow: 0px 0px 1px $second-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .Main {
+    .content {
+      @include flex(
+        $justify: space-evenly,
+        $align: center,
+        $gap: 30px,
+        $wrap: wrap
+      );
+      .aboutCard {
+        padding: 10px;
+        border: 1px solid $second-color;
+        border: 1px solid var(--card-border);
+
+        &:hover {
+          border: 1px solid $second-color;
+          .myImage {
+            transition: all 0.4s;
+            transform: translateY(-30px);
+          }
+        }
+
+        .myImage {
+          height: 130px;
+          width: 130px;
+        }
+      }
+    }
+  }
+}

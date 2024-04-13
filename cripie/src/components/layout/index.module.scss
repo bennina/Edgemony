@@ -1,0 +1,52 @@
+@import "../../styles/scss/variables/colors.scss";
+@import "../../styles/scss/variables/typography.scss";
+
+.Layout {
+  .dark{
+    --background: #{$background-pages};
+    --text: #{$first-color};
+    //CARD
+    --card--background: #{$background-cards-dark};
+    --card--text: #{$first-color};
+    --card-border: #{$border-cards-dark};
+    //BTN
+    --btn-text: #{$background-cards-dark};
+    --btn-background: #{$background-btn-light};
+    --btn-border: #{$border-btn-dark};
+    //scrollbar
+    --scrollbar-bg: #{$background-cards-dark};
+    //switcher
+    --status-active: #{$background-cards-dark};
+    --status-unactive: #{$first-color};
+
+    --text-active: #{$first-color};
+    --text-unactive: #{$background-pages};
+
+    background-color: var(--background);    
+    
+  }
+  .unactive{
+    --background: #{$first-color};
+    --text: #{$background-pages};
+    //CARD
+    --card--background: #{$background-cards-light};
+    --card--text: #{$first-color};
+    --card-border: #{$border-cards-light};
+    //BTN
+    --btn-text: #{$first-color};
+    --btn-background: #{$background-btn-dark};
+    --btn-border: #{$border-btn-light};
+    //scrollbar
+    --scrollbar-bg: #{$background-cards-light};
+    background-color: var(--background);
+
+    //switcher
+    --status-active: #{$background-pages};
+    --status-unactive: #{$first-color};
+
+    --text-unactive: #{$background-pages};
+    --text-active: #{$first-color};
+  }
+  background-color: var(--background);    
+  @include containerLayout();
+}

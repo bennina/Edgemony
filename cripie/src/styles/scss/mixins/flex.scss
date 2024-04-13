@@ -1,0 +1,186 @@
+$full: calc(100% - 17px);
+$half: calc(50% - 17px);
+$three: calc(33.33% - 17px);
+$four: calc(25% - 17px);
+
+@mixin flex(
+  $direction: row,
+  $justify: flex-start,
+  $align: flex-start,
+  $gap: 0px,
+  $wrap: nowrap
+) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+  flex-wrap: $wrap;
+}
+
+@mixin cardSize() {
+  /* MOBILE */
+  @media screen and (max-width: 500px) {
+    -ms-flex: 0 0 $full;
+    flex: 0 0 $full;
+    max-width: $full;
+    min-width: $full;
+  }
+
+  @media screen and (min-width: 500px) and (max-width: 700px) {
+    flex: 0 0 $four;
+    max-width: 300px;
+    min-width: 300px;
+  }
+  /* IPAD TABLET */
+  @media only screen and (min-width: 700px) and (max-width: 1023px) {
+    -ms-flex: 0 0 $half;
+    flex: 0 0 $half;
+    max-width: $half;
+    min-width: $half;
+  }
+
+  @media screen and (min-width: 1024px) {
+    -ms-flex: 0 0 $three;
+    flex: 0 0 $three;
+    max-width: $three;
+  }
+}
+
+//SIDEBAR
+
+@mixin sideBar() {
+  /* SMALL MOBILE */
+  @media screen and (max-width: 500px) {
+    -ms-flex: 0 0 calc(25% - 17px);
+    flex: 0 0 calc(25% - 17px);
+    max-width: calc(25% - 17px);
+    min-width: calc(25% - 17px);
+  }
+  /* MIDI SCREEN */
+  @media only screen and (min-width: 501px) and (max-width: 700px) {
+    -ms-flex: 0 0 calc(15% - 17px);
+    flex: 0 0 calc(15% - 17px);
+    max-width: calc(15% - 17px);
+    min-width: calc(15% - 17px);
+  }
+
+  @media only screen and (min-width: 701px) and (max-width: 991px) {
+    -ms-flex: 0 0 calc(13% - 17px);
+    flex: 0 0 calc(13% - 17px);
+    max-width: calc(13% - 17px);
+    min-width: calc(13% - 17px);
+  }
+
+  @media screen and (min-width: 992px) {
+    -ms-flex: 0 0 calc(25% - 17px);
+    flex: 0 0 calc(25% - 17px);
+    max-width: calc(25% - 17px);
+    min-width: calc(25% - 17px);
+    padding: 2em;
+  }
+}
+
+@mixin btn($margin-top: 0, $margin: 0 auto) {
+  box-shadow: $box-shadow;
+  border-radius: 24px;
+  text-align: left;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  width: fit-content;
+  margin: $margin;
+  border: unset;
+  margin-top: $margin-top;
+  svg {
+    margin-left: 30px;
+  }
+
+  h3 {
+    font-weight: 300;
+    font-size: 12px;
+  }
+}
+
+@mixin container() {
+  /* SMALL MOBILE */
+  @media screen and (max-width: 500px) {
+    -ms-flex: 0 0 calc(100% - 25% + 17px);
+    flex: 0 0 calc(100% - 25% + 17px);
+    max-width: calc(100% - 25% + 17px);
+    min-width: calc(100% - 25% + 17px);
+  }
+  /* MIDI SCREEN */
+  @media only screen and (min-width: 501px) and (max-width: 700px) {
+    -ms-flex: 0 0 calc(100% - 15% + 17px);
+    flex: 0 0 calc(100% - 15% + 17px);
+    max-width: calc(100% - 15% + 17px);
+    min-width: calc(100% - 15% + 17px);
+  }
+
+  @media only screen and (min-width: 701px) and (max-width: 991px) {
+    -ms-flex: 0 0 calc(100% - 13% + 17px);
+    flex: 0 0 calc(100% - 13% + 17px);
+    max-width: calc(100% - 13% + 17px);
+    min-width: calc(100% - 13% + 17px);
+  }
+
+  @media screen and (min-width: 992px) {
+    -ms-flex: 0 0 calc(100% - 25% + 17px);
+    flex: 0 0 calc(100% - 25% + 17px);
+    max-width: calc(100% - 25% + 17px);
+    min-width: calc(100% - 25% + 17px);
+    padding: 2em;
+  }
+}
+
+@mixin col($gap: 0px, $sizeMd: 50%) {
+  /* SMALL MOBILE */
+  @media screen and (max-width: 991px) {
+    -ms-flex: 0 0 calc(100% - $gap);
+    flex: 0 0 calc(100% - $gap);
+    max-width: calc(100% - $gap);
+    min-width: calc(100% - $gap);
+  }
+
+  @media screen and (min-width: 992px) {
+    -ms-flex: 0 0 calc($sizeMd - $gap);
+    flex: 0 0 calc($sizeMd - $gap);
+    max-width: calc($sizeMd - $gap);
+    min-width: calc($sizeMd - $gap);
+  }
+}
+
+@mixin containerLayout() {
+  .container {
+    background-color: var(--background);
+
+    @include container();
+
+    height: calc(100vh - 82px);
+    overflow-y: scroll;
+
+    float: right;
+    padding: 2em;
+
+    @include poppins();
+
+    h2 {
+      font-size: 14px;
+      margin-bottom: 2em;
+    }
+
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: var(--scrollbar-bg);
+      box-shadow: 3px 3px 3px var(--scrollbar-bg);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: var(--text);
+      border-radius: 50px;
+    }
+  }
+}

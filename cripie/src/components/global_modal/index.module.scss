@@ -1,0 +1,127 @@
+.GlobalModal {
+  @include flex($justify: center, $align: center);
+  position: fixed;
+  top: 0;
+  left: 0;
+  @include size(100%);
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    @include size(100%);
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+  }
+  .text {
+    position: absolute;
+    top: 40vh;
+    left: calc(60vw - 150px);
+    z-index: 2;
+    font-size: 0;
+    text-align: center;
+    color: $graph;
+    text-shadow: 2px 2px 2px var(--card-border);
+    animation: textAnimation 2s linear 0.5s 1 normal forwards;
+    width: 300px;
+    @media screen and (min-width: 800px) {
+      left: calc(60vw - 360px);
+      width: 800px;
+      animation: textAnimationDesk 2s linear 0.5s 1 normal forwards;
+    }
+  }
+  .visibility {
+    display: none;
+  }
+  .content {
+    @include size(90%, auto);
+    text-align: center;
+    position: fixed;
+    border-radius: 20px;
+    background-color: var(--card--background);
+    color: $second-color;
+    box-shadow: 0px 0px 6px 2px $graph;
+    padding: 20px 40px 40px;
+    margin-left: 30%;
+    max-width: calc(800px - 30%);
+    z-index: 3;
+
+    @media screen and (max-width: 900px) {
+      max-width: calc(600px - 30%);
+      margin-left: 25%;
+    }
+    @media screen and (max-width: 700px) {
+      max-width: calc(300px - 10%);
+      margin-left: 20%;
+    }
+
+    @media screen and (max-width: 300px) {
+      max-width: calc(300px - 30%);
+      margin-left: 25%;
+    }
+
+    .title {
+      @include space-around($all: 20px);
+    }
+    .form {
+      @include flex(column, center, center, 20px, nowrap);
+      .input {
+        background-color: var(--card--background);
+        @include size(100%, 30px);
+        border: 0;
+        border-bottom: 1px solid var(--card-border);
+        outline: none;
+        color: var(--text);
+        @include space-around(0, 0, 6px);
+        cursor: text;
+      }
+      .firstInput {
+        display: flex;
+        align-items: center;
+
+        .icon {
+          @include size(50px);
+        }
+      }
+      .secondInput {
+        display: flex;
+        align-items: center;
+        pointer-events: none;
+
+        .icon {
+          @include size(35px);
+        }
+      }
+      .btn {
+        @include btn($margin-top: 40px);
+        border: none;
+        color: var(--card--background);
+        background-color: $graph;
+
+        cursor: pointer;
+        &:hover {
+          background-color: $graph;
+          color: var(--text);
+        }
+      }
+    }
+  }
+}
+
+@keyframes textAnimation {
+  from {
+    font-size: 0;
+  }
+  to {
+    font-size: 1.3rem;
+  }
+}
+
+@keyframes textAnimationDesk {
+  from {
+    font-size: 0;
+  }
+  to {
+    font-size: 2.2rem;
+  }
+}

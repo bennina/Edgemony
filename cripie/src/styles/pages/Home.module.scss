@@ -1,0 +1,87 @@
+.Main {
+  .container {
+    @include flex($direction: column, $gap: 20px);
+    @media screen and (min-width: 700px) {
+      @include flex($direction: column, $gap: 40px);
+    }
+
+    .section {
+      @include space-around($all: 10px);
+      @include flex($direction: column);
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      max-height: 100px;
+      @media screen and (min-width: 700px) {
+        max-height: inherit;
+      }
+
+      h2 {
+        text-align: center;
+        transform: translateY(20px);
+        color: $light;
+      }
+
+      .sectionTitle {
+        position: relative;
+        width: 100%;
+        cursor: pointer;
+        z-index: 2;
+        background-color: var(--background);
+        @media screen and (min-width: 700px) {
+          pointer-events: none;
+        }
+        &::before {
+          content: "<";
+          transform: rotate(90deg);
+          position: absolute;
+          right: 0px;
+          top: -5px;
+          font-size: 25px;
+          transition: 0.4s;
+          @media screen and (min-width: 700px) {
+            display: none;
+          }
+        }
+      }
+
+      .sectionTitleActive {
+        &:before {
+          transform: rotate(-90deg);
+        }
+      }
+
+      .sectionCont {
+        padding: 20px 0px 20px 0px;
+        width: 100%;
+        transform: translateY(-200vh);
+        transition: 0.4s;
+        z-index: 1;
+        @media screen and (min-width: 710px) {
+          transform: translateY(0px);
+        }
+      }
+
+      .sectionContActive {
+        transform: translateY(0px);
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      .sectionButton {
+        align-self: center;
+        margin: 0px 0px 5px 0px;
+        @media screen and (min-width: 700px) {
+          align-self: flex-end;
+          margin: 0px 10px 5px 0px;
+        }
+      }
+    }
+
+    .sectionActive {
+      max-height: inherit;
+    }
+  }
+}

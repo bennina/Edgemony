@@ -1,0 +1,255 @@
+.settingList {
+  @include flex($direction: column, $align: center, $gap: 30px);
+  .userSettings {
+    width: 100%;
+    transform: translateY(30px);
+    background-color: var(--card--background);
+    border: 1px solid var(--card-border);
+    box-shadow: 0 0 6px 1px var(--card-border);
+    border-radius: 20px;
+    @include space-around($top-bot: 10px, $left-right: 10px);
+    @include flex($direction: column, $align: center);
+
+    .userPhoto {
+      transform: translateY(-50px);
+      border: 1px solid $second-color;
+      border-radius: 100px;
+      background-color: var(--card--background);
+      box-shadow: 0 0 6px 1px $second-color;
+      object-fit: fill;
+      @include size($width: 90px);
+      @include space-around($top-bot: 6px, $left-right: 6px);
+    }
+    .userSettingsTitle {
+      text-decoration: underline $second-color;
+    }
+    .userData {
+      transform: translateY(-30px);
+      font-size: 12px;
+      @include size($width: 100%);
+      @include flex($direction: column, $gap: 10px);
+      @include space-around($left-right: 16px);
+    }
+
+    .Button {
+      @include flex($align: center);
+      @include poppins();
+      @include btn($margin-top: 40px);
+      background-color: var(--btn-background);
+      color: #000000;
+      transition: all 0.55s;
+    }
+
+    .editBtn {
+      @include flex($align: center);
+      @include poppins();
+      @include btn();
+      background-color: $second-color;
+      color: var(--text);
+      cursor: pointer;
+      transition: all 0.55s;
+
+      &:hover {
+        color: $second-color;
+        background-color: var(--btn-background);
+      }
+    }
+  }
+  // CARD
+  .cardSettings {
+    width: 100%;
+    transform: translateY(20px);
+    background-color: transparent;
+    border-radius: 20px;
+    @include space-around($top-bot: 10px, $left-right: 10px);
+    @include flex($direction: column, $align: center);
+    .cardSettingsTitle {
+      text-decoration: underline $second-color;
+    }
+    .card {
+      @include size($width: 260px, $height: 150px);
+      perspective: 600px;
+      .cardFront {
+        @include space-around($top-bot: 18px, $left-right: 18px);
+        transform: rotateY(0);
+        .logo {
+          @include size($width: 15px);
+        }
+        .cardNum {
+          display: block;
+          width: 100%;
+          word-spacing: 4px;
+          font-size: 10px;
+          letter-spacing: 2px;
+          color: var(--text);
+          text-align: center;
+          margin-bottom: 5px;
+          margin-top: 2px;
+        }
+        .icon {
+          height: 15px;
+          margin-bottom: 5px;
+
+          .chipIcon {
+            @include size($width: 15px);
+          }
+        }
+        .userName {
+          width: 75%;
+          float: left;
+        }
+        .cardExpiration {
+          width: 25%;
+          float: left;
+        }
+      }
+      .cardBack {
+        @include space-around($top-bot: 18px, $left-right: 0);
+        transform: rotateY(-180deg);
+        .blackLine {
+          margin-top: 5px;
+          height: 28px;
+          background-color: var(--card--background);
+        }
+        .content {
+          padding: 15px 15px 0;
+          .cardSecret {
+            @include space-around($top-bot: 5px, $left-right: 12px);
+            background-color: var(--btn-background);
+            position: relative;
+            .secretNum {
+              color: var(--card--background);
+              text-align: right;
+              @include space-around();
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+
+    .cardPart {
+      box-shadow: 1px 1px $light;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: inline-block;
+      @include size($width: 260px, $height: 150px);
+      background: linear-gradient(
+        to right bottom,
+        #252525,
+        #304a31,
+        $graph,
+        $second-color
+      );
+
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      border-radius: 8px;
+
+      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transform-style: preserve-3d;
+      backface-visibility: hidden;
+    }
+
+    .cardLabel {
+      font-size: 6px;
+      text-transform: uppercase;
+      color: var(--text);
+      letter-spacing: 1px;
+    }
+    .cardInfo {
+      margin-bottom: 0;
+      margin-top: 5px;
+      font-size: 12px;
+      line-height: 18px;
+      color: var(--text);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .card:hover .cardFront {
+      transform: rotateY(180deg);
+    }
+
+    .card:hover .cardBack {
+      transform: rotateY(0deg);
+    }
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .settingList {
+    .userSettings {
+      transform: translateY(10px);
+      @include flex($align: center, $gap: 10px);
+      @include space-around($top-bot: 30px, $left-right: 20px);
+      .userPhoto {
+        transform: translateY(0);
+        @include size($width: 120px);
+      }
+      .userData {
+        transform: translateY(0);
+        font-size: 14px;
+      }
+      .editBtn {
+        transform: translateY(60px);
+      }
+    }
+    .cardSettings {
+      .card {
+        @include size($width: 320px, $height: 190px);
+        .cardFront {
+          .logo {
+            @include size($width: 20px);
+          }
+          .cardNum {
+            font-size: 20px;
+            margin-bottom: 5px;
+            margin-top: 10px;
+          }
+          .icon {
+            height: 30px;
+            margin-bottom: 5px;
+
+            .chipIcon {
+              @include size($width: 30px);
+            }
+          }
+        }
+        .cardBack {
+          .blackLine {
+            height: 38px;
+          }
+          .content {
+            .cardSecret {
+              .secretNum {
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
+
+      .cardPart {
+        @include size($width: 320px, $height: 190px);
+      }
+
+      .cardLabel {
+        font-size: 10px;
+      }
+      .cardInfo {
+        font-size: 16px;
+      }
+
+      .card:hover .cardFront {
+        transform: rotateY(180deg);
+      }
+
+      .card:hover .cardBack {
+        transform: rotateY(0deg);
+      }
+    }
+  }
+}
